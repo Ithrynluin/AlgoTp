@@ -10,7 +10,19 @@ void initFileAttente(FileAttente * file){
     (*file).queu = NULL;
 }
 
-//desinit
+/*
+Procédure qui supprimer tous les élèment de la file
+Paramètre d'entrée: File d'attente à vider
+Paramètre de sortie: File d'attente vide
+Pré-condition: La file doit être initialiser
+Post-condition: La file est vide et initialisé
+*/
+void desinitFileAttente(FileAttente *file){
+
+    while((*file).tete != NULL){
+        retireTete(file);
+    }
+}
 
 /*
 Procédure permettant d'ajouter une personne en queue de file d'attente
@@ -23,21 +35,21 @@ void ajoutPers (FileAttente * f, const int num, char * nom) {
     maillon * np;
 
     if((*f).tete == NULL) {
-        np=new maillon;
-        (*np).numero=num;
-        (*np).nom=nom;
-        (*np).suivant=NULL;
+        np = new maillon;
+        (*np).numero = num;
+        (*np).nom = nom;
+        (*np).suivant = NULL;
 
-        (*f).tete=np;
-        (*f).queu=np;
+        (*f).tete = np;
+        (*f).queu = np;
     } else {
-        np=(*f).queu;
-        (*np).suivant=new maillon;
-        np=(*np).suivant;
-        (*np).numero=num;
-        (*np).nom=nom;
-        (*np).suivant=NULL;
-        (*f).queu=np;
+        np = (*f).queu;
+        (*np).suivant = new maillon;
+        np = (*np).suivant;
+        (*np).numero = num;
+        (*np).nom = nom;
+        (*np).suivant = NULL;
+        (*f).queu = np;
     }
 }
 
@@ -63,11 +75,15 @@ void retireTete(FileAttente * file){
 Procédure permettant de consulter la personne en tete de file
 Paramètre entrée : file d'attente initialisée
 Paramètre sortie : affichage de la personne en tete
-Pré-condition : la file ne doit pas etre vide
-Post-condition : /
+Pré-condition : la file doit être initialisée
 */
 void consulterTete (FileAttente file) {
-    cout << "La tete de file est : " << (*file.tete).nom << " qui possede le numero " << (*file.tete).numero << endl;
+    if(file.tete != NULL){
+        cout << "La tete de file est : " << (*file.tete).nom << " qui possede le numero " << (*file.tete).numero << endl;
+    }else{
+        cout << "Personne dans la liste" << endl;
+    }
+
 }
 
 /*

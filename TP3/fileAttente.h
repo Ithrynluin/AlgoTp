@@ -13,8 +13,9 @@ typedef struct {
 } FileAttente;
 
 void initFileAttente(FileAttente * file);
+void desinitFileAttente(FileAttente *file);
 void retireTete(FileAttente * file);
-void ajoutPers (FileAttente * f, int num, char * nom);
+void ajoutPers (FileAttente * f, const int num, char * nom);
 void consulterTete (FileAttente file);
 int longueurFile(const FileAttente file);
 #endif // FILEATTENTE_H_INCLUDED

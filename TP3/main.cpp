@@ -8,7 +8,7 @@ int main(){
     FileAttente file;
     int choix;
     int num;
-    char * nom;
+    char *nom;
 
     initFileAttente(&file);
 
@@ -20,7 +20,7 @@ int main(){
             cout << "3- Consulter la personne en tête de file" << endl;
             cout << "4- Calculer la longueur de la fime d'attente" << endl;
             cout << "5- Quitter" << endl;
-
+            cout << "Votre choix : ";
             cin >> choix;
 
         }while(choix > 5 || choix < 1);
@@ -30,13 +30,18 @@ int main(){
                 cout << "Entrer le numero de la personne : ";
                 cin >> num;
                 cout << "Entrer le nom de la personne : ";
+                nom = new char[30];
                 scanf("%s", nom);
                 ajoutPers(&file, num, nom);
-                cout << "Ajout effectué. " << endl << endl;
+                cout << "Ajout de la personne numero " << num << " du nom de " << nom << " effectué. " << endl << endl;
                 break;
             case 2:
-                retireTete(&file);
-                cout << "Suppresion effectuée" << endl << endl;
+                if(file.tete != NULL){
+                    retireTete(&file);
+                    cout << "Suppresion effectuée" << endl << endl;
+                }else{
+                    cout << "La file est vide" << endl << endl;
+                }
                 break;
             case 3:
                 consulterTete(file);
@@ -46,12 +51,14 @@ int main(){
                 cout << "La longueur de la liste est de " << longueurFile(file) << endl << endl;
                 break;
             default:
-                cout << "Commande invalide" << endl << endl;
+                cout << "OK !" << endl << endl;
         }
-
+        cout << endl;
     }while(choix != 5);
 
     cout << "Au revoir" << endl;
+
+    desinitFileAttente(&file);
 
     return 0;
 }
