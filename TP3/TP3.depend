@@ -1,0 +1,11 @@
+# depslib dependency file v1.0
+1412349907 source:/mnt/sda5/Documents/Code-Block/TP3/fileAttente.cpp
+	<iostream>
+	"fileAttente.h"
+
+1412349941 /mnt/sda5/Documents/Code-Block/TP3/fileAttente.h
+
+1412347228 source:/mnt/sda5/Documents/Code-Block/TP3/main.cpp
+	<iostream>
+	"fileAttente.h"
+
