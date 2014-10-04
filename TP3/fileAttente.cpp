@@ -1,10 +1,14 @@
+//fileAttente.cpp
+//Implémentattion du module FileAttente
 #include <iostream>
 #include "fileAttente.h"
 using namespace std;
 
-//Procédure qui initialise une file
-//Paramètre de sortie: file d'attente initialisé
-//Post-condition: la tete et la queue dont égale à NULL
+/*
+Procédure qui initialise une file
+Paramètre de sortie: file d'attente initialisé
+Post-condition: la tete et la queue dont égale à NULL
+*/
 void initFileAttente(FileAttente * file){
     (*file).tete = NULL;
     (*file).queu = NULL;
@@ -26,10 +30,12 @@ void desinitFileAttente(FileAttente *file){
 
 /*
 Procédure permettant d'ajouter une personne en queue de file d'attente
-Paramètres d'entrée :
-Paramètres de sortie :
-Pré-condition :
-Post-conditon :
+Paramètres d'entrée : file d'attente à laquelle on doit ajouter un maillon
+                        numero de la personne à ajouer
+                        nom de la personne
+Paramètres de sortie : file d'attente avec le nouveau maillon en queue
+Pré-condition : la file d'attente doit être initialisé
+Post-conditon : le nouveau maillon est en queue de file.
 */
 void ajoutPers (FileAttente * f, const int num, char * nom) {
     maillon * np;
@@ -52,17 +58,20 @@ void ajoutPers (FileAttente * f, const int num, char * nom) {
         (*f).queu = np;
     }
 }
-
-//Procédure qui retire une personne en queue de file
-//Paramètre entrée: file d'attente initialiser
-//Paramètre sortie: file d'attente avec un élément retiré en tete
-//Pré-condition: la file ne doit pas etre vide
-//Post-condition: le deuxième maillon est maintenant en tete
-//                  Si file ne contient qu'un éléemnt, le file est initialisée
+/*
+Procédure qui retire une personne en queue de file
+Paramètre entrée: file d'attente initialiser
+Paramètre sortie: file d'attente avec un élément retiré en tete
+Pré-condition: la file ne doit pas etre vide
+Post-condition: le deuxième maillon est maintenant en tete
+                  Si file ne contient qu'un éléemnt, le file est initialisée
+*/
 void retireTete(FileAttente * file){
     maillon * tmp;
     if((*file).tete == (*file).queu){
-        delete (*file).tete;
+        tmp = (*file).tete;
+        delete (*tmp).nom;
+        delete tmp;
         initFileAttente(file);
     }else{
         tmp = (*file).tete;

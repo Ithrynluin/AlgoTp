@@ -10,3 +10,14 @@
 	<stdio.h>
 	"fileAttente.h"
 
+1412364599 source:/home/clement/Git/AlgoTp/TP3/fileAttente.cpp
+	<iostream>
+	"fileAttente.h"
+
+1412412010 /home/clement/Git/AlgoTp/TP3/fileAttente.h
+
+1412364644 source:/home/clement/Git/AlgoTp/TP3/main.cpp
+	<iostream>
+	<stdio.h>
+	"fileAttente.h"
+
