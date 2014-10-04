@@ -1,3 +1,5 @@
+//main.cpp
+//Programme principal
 #include <iostream>
 #include <stdio.h>
 #include "fileAttente.h"
