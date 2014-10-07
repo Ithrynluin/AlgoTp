@@ -11,6 +11,7 @@ int main(){
     int choix;
     int num;
     char *nom;
+    maillon *tmp;
 
     initFileAttente(&file);
 
@@ -46,7 +47,12 @@ int main(){
                 }
                 break;
             case 3:
-                consulterTete(file);
+                tmp = consulterTete(file);
+                if(tmp != NULL){
+                    cout << "La tete de file est : " << (*tmp).nom << " qui possede le numero " << (*tmp).numero << endl;
+                }else{
+                    cout << "La file est vide" << endl;
+                }
                 cout << endl;
                 break;
             case 4:

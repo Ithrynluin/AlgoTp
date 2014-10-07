@@ -85,14 +85,10 @@ Procédure permettant de consulter la personne en tete de file
 Paramètre entrée : file d'attente initialisée
 Paramètre sortie : affichage de la personne en tete
 Pré-condition : la file doit être initialisée
+Post-condition : retiurne le maillon de tete ou NULL si la file est vide
 */
-void consulterTete (FileAttente file) {
-    if(file.tete != NULL){
-        cout << "La tete de file est : " << (*file.tete).nom << " qui possede le numero " << (*file.tete).numero << endl;
-    }else{
-        cout << "Personne dans la liste" << endl;
-    }
-
+maillon* consulterTete (FileAttente file) {
+    return file.tete;
 }
 
 /*

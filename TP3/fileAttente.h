@@ -64,8 +64,9 @@ Procédure permettant de consulter la personne en tete de file
 Paramètre entrée : file d'attente initialisée
 Paramètre sortie : affichage de la personne en tete
 Pré-condition : la file doit être initialisée
+Post-condition : retiurne le maillon de tete ou NULL si la file est vide
 */
-void consulterTete (FileAttente file);
+maillon* consulterTete (FileAttente file);
 
 /*
 Fonction qui retourne la taille de la file
