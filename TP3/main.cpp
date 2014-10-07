@@ -52,13 +52,16 @@ int main(){
             case 4:
                 cout << "La longueur de la liste est de " << longueurFile(file) << endl << endl;
                 break;
+            case 5:
+                cout << "Au revoir" << endl;
+                break;
             default:
-                cout << "OK !" << endl << endl;
+                cout << "Commande invalide !" << endl << endl;
         }
         cout << endl;
     }while(choix != 5);
 
-    cout << "Au revoir" << endl;
+
 
     desinitFileAttente(&file);
 
