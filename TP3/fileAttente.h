@@ -13,7 +13,7 @@
 
 typedef struct pers {
     int numero;
-    char * nom;
+    char nom[30];
     struct pers * suivant;
 } maillon;
 
@@ -47,7 +47,7 @@ Paramètres de sortie : file d'attente avec le nouveau maillon en queue
 Pré-condition : la file d'attente doit être initialisé
 Post-conditon : le nouveau maillon est en queue de file.
 */
-void ajoutPers (FileAttente &f, const int num, char * nom);
+void ajoutPers (FileAttente &f, const int num, char nom[]);
 
 /*
 Procédure qui retire une personne en queue de file

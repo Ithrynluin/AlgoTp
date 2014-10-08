@@ -1,6 +1,7 @@
 //fileAttente.cpp
 //Implémentattion du module FileAttente
 #include <iostream>
+#include <cstring>
 #include "fileAttente.h"
 using namespace std;
 
@@ -37,24 +38,21 @@ Paramètres de sortie : file d'attente avec le nouveau maillon en queue
 Pré-condition : la file d'attente doit être initialisé
 Post-conditon : le nouveau maillon est en queue de file.
 */
-void ajoutPers (FileAttente &f, const int num, char * nom) {
+void ajoutPers (FileAttente &f, const int num, char nom[]) {
     maillon * np;
+    maillon *tmp;
+
+    np = new maillon;
+    (*np).numero = num;
+    strncpy((*np).nom, nom, 30);
+    (*np).suivant = NULL;
 
     if(f.tete == NULL) {
-        np = new maillon;
-        (*np).numero = num;
-        (*np).nom = nom;
-        (*np).suivant = NULL;
-
         f.tete = np;
         f.queu = np;
     } else {
-        np = f.queu;
-        (*np).suivant = new maillon;
-        np = (*np).suivant;
-        (*np).numero = num;
-        (*np).nom = nom;
-        (*np).suivant = NULL;
+        tmp = f.queu;
+        (*tmp).suivant = np;
         f.queu = np;
     }
 }
@@ -70,7 +68,7 @@ void retireTete(FileAttente &file){
     maillon * tmp;
     if(file.tete == file.queu){
         tmp = file.tete;
-        delete (*tmp).nom;
+        //delete (*tmp).nom;
         delete tmp;
         initFileAttente(file);
     }else{
