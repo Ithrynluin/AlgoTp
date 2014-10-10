@@ -2,7 +2,6 @@
 //Implémentattion du module FileAttente
 #include <iostream>
 #include <cstring>
-
 #include "fileAttente.h"
 using namespace std;
 
@@ -14,7 +13,6 @@ Post-condition: la tete et la queue dont égale à NULL
 void initFileAttente(FileAttente &file){
     file.tete = NULL;
     file.queu = NULL;
-
 }
 
 /*
@@ -40,7 +38,6 @@ Paramètres de sortie : file d'attente avec le nouveau maillon en queue
 Pré-condition : la file d'attente doit être initialisé
 Post-conditon : le nouveau maillon est en queue de file.
 */
-
 void ajoutPers (FileAttente &f, const int num, char nom[]) {
     maillon * np;
     maillon *tmp;
@@ -59,6 +56,19 @@ void ajoutPers (FileAttente &f, const int num, char nom[]) {
         f.queu = np;
     }
 }
+
+void ajoutPers(FileAttente file, maillon *m){
+    maillon *tmp;
+    (*m).suivant = NULL;
+    if(file.tete == NULL){
+        file.tete = m;
+        file.queu = m;
+    }else{
+        tmp = file.queu;
+        (*tmp).suivant = m;
+        file.queu = m;
+    }
+}
 /*
 Procédure qui retire une personne en queue de file
 Paramètre entrée: file d'attente initialiser
@@ -67,7 +77,6 @@ Pré-condition: la file ne doit pas etre vide
 Post-condition: le deuxième maillon est maintenant en tete
                   Si file ne contient qu'un éléemnt, le file est initialisée
 */
-
 void retireTete(FileAttente &file){
     maillon * tmp;
     if(file.tete == file.queu){
@@ -111,4 +120,5 @@ int longueurFile(const FileAttente file){
 
     return lg;
 }
+
 

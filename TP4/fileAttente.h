@@ -27,9 +27,7 @@ Procédure qui initialise une file
 Paramètre de sortie: file d'attente initialisé
 Post-condition: la tete et la queue dont égale à NULL
 */
-
 void initFileAttente(FileAttente & file);
-
 
 /*
 Procédure qui supprimer tous les élèment de la file
@@ -49,11 +47,7 @@ Paramètres de sortie : file d'attente avec le nouveau maillon en queue
 Pré-condition : la file d'attente doit être initialisé
 Post-conditon : le nouveau maillon est en queue de file.
 */
-<<<<<<< HEAD
-void ajoutPers (FileAttente * f, const int num, char * nom);
-=======
-void ajoutPers (FileAttente &f, const int num, char nom[]);
->>>>>>> 429bfe217736ff2b90269598e6f8bc86781c56b1
+void ajoutPers(FileAttente &f, const int num, char nom[]);
 
 /*
 Procédure qui retire une personne en queue de file
@@ -63,9 +57,7 @@ Pré-condition: la file ne doit pas etre vide
 Post-condition: le deuxième maillon est maintenant en tete
                   Si file ne contient qu'un éléemnt, le file est initialisée
 */
-
 void retireTete(FileAttente &file);
-
 
 /*
 Procédure permettant de consulter la personne en tete de file
@@ -83,4 +75,6 @@ Retourne: la longueur de la file d'attente
 Pré-condition: la file doit être initialisé
 */
 int longueurFile(const FileAttente file);
+
+void ajoutPers(FileAttente file, maillon * m);
 #endif // FILEATTENTE_H_INCLUDED

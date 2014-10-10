@@ -3,18 +3,22 @@
 #include <iostream>
 #include <stdio.h>
 #include "fileAttente.h"
+#include "pile.h"
 
 using namespace std;
 
 int main(){
     FileAttente file;
+    FileAttente fileCopie, fileUndo;
+    element eltUndo;
+    Pile pile;
     int choix;
     int num;
     char nom[30];
     maillon *tmp;
 
     initFileAttente(file);
-
+    initPile(pile);
 
     do{
         do{
@@ -32,6 +36,8 @@ int main(){
 
         switch(choix){
             case 1:
+                fileCopie=copier(file);
+                empiler(pile, &fileCopie);
                 cout << "Entrer le numero de la personne : ";
                 cin >> num;
                 cout << "Entrer le nom de la personne : ";
@@ -41,6 +47,8 @@ int main(){
                 break;
             case 2:
                 if(file.tete != NULL){
+                    copier(file);
+                    empiler(pile, &fileCopie);
                     retireTete(file);
                     cout << "Suppresion effectuée" << endl << endl;
                 }else{
@@ -60,6 +68,15 @@ int main(){
                 cout << "La longueur de la liste est de " << longueurFile(file) << endl << endl;
                 break;
             case 5:
+                eltUndo = sommet(pile);
+                fileUndo = eltUndo.file;
+                cout << "Avt desinit" << endl;
+                desinitFileAttente(file);
+                cout << "Apr desinit" << endl;
+                file = fileUndo;
+                cout << "Avt depiler" << endl;
+                depiler(pile);
+                cout << "Undo effectué" << endl << endl;
                 break;
             case 6:
                 cout << "Au revoir" << endl;
@@ -68,11 +85,12 @@ int main(){
                 cout << "Commande invalide !" << endl << endl;
         }
         cout << endl;
-    }while(choix != 5);
+    }while(choix != 6);
+
 
 
     desinitFileAttente(file);
-
+    desinitPile(pile);
 
     return 0;
 }
