@@ -5,10 +5,11 @@ using namespace std;
 
 /*
  Fonction qui initialise une pile
- Para
+ Para*/
 Pile initPile(Pile pile){
     pile.tete = NULL;
-=======
+
+
 void desinitPile(Pile pile){
 
   while(pile.tete != NULL){

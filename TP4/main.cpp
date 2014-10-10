@@ -10,17 +10,11 @@ int main(){
     FileAttente file;
     int choix;
     int num;
-<<<<<<< HEAD
-    char *nom;
-    maillon *tmp;
-
-    initFileAttente(&file);
-=======
     char nom[30];
     maillon *tmp;
 
     initFileAttente(file);
->>>>>>> 429bfe217736ff2b90269598e6f8bc86781c56b1
+
 
     do{
         do{
@@ -41,23 +35,13 @@ int main(){
                 cout << "Entrer le numero de la personne : ";
                 cin >> num;
                 cout << "Entrer le nom de la personne : ";
-<<<<<<< HEAD
-                nom = new char[30];
-                scanf("%s", nom);
-                ajoutPers(&file, num, nom);
-=======
                 scanf("%s", nom);
                 ajoutPers(file, num, nom);
->>>>>>> 429bfe217736ff2b90269598e6f8bc86781c56b1
                 cout << "Ajout de la personne numero " << num << " du nom de " << nom << " effectué. " << endl << endl;
                 break;
             case 2:
                 if(file.tete != NULL){
-<<<<<<< HEAD
-                    retireTete(&file);
-=======
                     retireTete(file);
->>>>>>> 429bfe217736ff2b90269598e6f8bc86781c56b1
                     cout << "Suppresion effectuée" << endl << endl;
                 }else{
                     cout << "La file est vide" << endl << endl;
@@ -87,12 +71,8 @@ int main(){
     }while(choix != 5);
 
 
-
-<<<<<<< HEAD
-    desinitFileAttente(&file);
-=======
     desinitFileAttente(file);
->>>>>>> 429bfe217736ff2b90269598e6f8bc86781c56b1
+
 
     return 0;
 }
