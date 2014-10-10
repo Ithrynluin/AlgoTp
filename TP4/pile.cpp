@@ -4,6 +4,9 @@
 
 using namespace std;
 
+/*
+ Fonction qui initialise une pile
+ Para
 Pile initPile(Pile pile){
     pile.tete = NULL;
 }
@@ -18,4 +21,8 @@ void empliler(Pile &pile, FileAttente file){
         e.suisvant = NULL
     }
     pile.tete = &e;
+}
+
+element sommet(Pile pile){
+    return pile.tete;
 }

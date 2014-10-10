@@ -22,7 +22,8 @@ int main(){
             cout << "2- Retirer la personne en tête" << endl;
             cout << "3- Consulter la personne en tête de file" << endl;
             cout << "4- Calculer la longueur de la fime d'attente" << endl;
-            cout << "5- Quitter" << endl;
+            cout << "5- Undo" << endl;
+            cout << "6- Quitter" << endl;
             cout << "Votre choix : ";
             cin >> choix;
 
@@ -58,6 +59,8 @@ int main(){
                 cout << "La longueur de la liste est de " << longueurFile(file) << endl << endl;
                 break;
             case 5:
+                break;
+            case 6:
                 cout << "Au revoir" << endl;
                 break;
             default:
