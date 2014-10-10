@@ -10,10 +10,10 @@ int main(){
     FileAttente file;
     int choix;
     int num;
-    char *nom;
+    char nom[30];
     maillon *tmp;
 
-    initFileAttente(&file);
+    initFileAttente(file);
 
     do{
         do{
@@ -33,14 +33,13 @@ int main(){
                 cout << "Entrer le numero de la personne : ";
                 cin >> num;
                 cout << "Entrer le nom de la personne : ";
-                nom = new char[30];
                 scanf("%s", nom);
-                ajoutPers(&file, num, nom);
+                ajoutPers(file, num, nom);
                 cout << "Ajout de la personne numero " << num << " du nom de " << nom << " effectué. " << endl << endl;
                 break;
             case 2:
                 if(file.tete != NULL){
-                    retireTete(&file);
+                    retireTete(file);
                     cout << "Suppresion effectuée" << endl << endl;
                 }else{
                     cout << "La file est vide" << endl << endl;
@@ -69,7 +68,7 @@ int main(){
 
 
 
-    desinitFileAttente(&file);
+    desinitFileAttente(file);
 
     return 0;
 }
