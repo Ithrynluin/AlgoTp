@@ -1,0 +1,13 @@
+# depslib dependency file v1.0
+1412772530 source:/home/clement/Git/AlgoTp/TP4/fileAttente.cpp
+	<iostream>
+	<cstring>
+	"fileAttente.h"
+
+1412772400 /home/clement/Git/AlgoTp/TP4/fileAttente.h
+
+1412772530 source:/home/clement/Git/AlgoTp/TP4/main.cpp
+	<iostream>
+	<stdio.h>
+	"fileAttente.h"
+
