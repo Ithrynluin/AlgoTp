@@ -1,7 +1,10 @@
 //fileAttente.cpp
 //Implémentattion du module FileAttente
 #include <iostream>
+<<<<<<< HEAD
+=======
 #include <cstring>
+>>>>>>> 429bfe217736ff2b90269598e6f8bc86781c56b1
 #include "fileAttente.h"
 using namespace std;
 
@@ -10,9 +13,15 @@ Procédure qui initialise une file
 Paramètre de sortie: file d'attente initialisé
 Post-condition: la tete et la queue dont égale à NULL
 */
+<<<<<<< HEAD
+void initFileAttente(FileAttente * file){
+    (*file).tete = NULL;
+    (*file).queu = NULL;
+=======
 void initFileAttente(FileAttente &file){
     file.tete = NULL;
     file.queu = NULL;
+>>>>>>> 429bfe217736ff2b90269598e6f8bc86781c56b1
 }
 
 /*
@@ -22,9 +31,15 @@ Paramètre de sortie: File d'attente vide
 Pré-condition: La file doit être initialiser
 Post-condition: La file est vide et initialisé
 */
+<<<<<<< HEAD
+void desinitFileAttente(FileAttente *file){
+
+    while((*file).tete != NULL){
+=======
 void desinitFileAttente(FileAttente &file){
 
     while(file.tete != NULL){
+>>>>>>> 429bfe217736ff2b90269598e6f8bc86781c56b1
         retireTete(file);
     }
 }
@@ -38,6 +53,27 @@ Paramètres de sortie : file d'attente avec le nouveau maillon en queue
 Pré-condition : la file d'attente doit être initialisé
 Post-conditon : le nouveau maillon est en queue de file.
 */
+<<<<<<< HEAD
+void ajoutPers (FileAttente * f, const int num, char * nom) {
+    maillon * np;
+
+    if((*f).tete == NULL) {
+        np = new maillon;
+        (*np).numero = num;
+        (*np).nom = nom;
+        (*np).suivant = NULL;
+
+        (*f).tete = np;
+        (*f).queu = np;
+    } else {
+        np = (*f).queu;
+        (*np).suivant = new maillon;
+        np = (*np).suivant;
+        (*np).numero = num;
+        (*np).nom = nom;
+        (*np).suivant = NULL;
+        (*f).queu = np;
+=======
 void ajoutPers (FileAttente &f, const int num, char nom[]) {
     maillon * np;
     maillon *tmp;
@@ -54,6 +90,7 @@ void ajoutPers (FileAttente &f, const int num, char nom[]) {
         tmp = f.queu;
         (*tmp).suivant = np;
         f.queu = np;
+>>>>>>> 429bfe217736ff2b90269598e6f8bc86781c56b1
     }
 }
 /*
@@ -64,6 +101,18 @@ Pré-condition: la file ne doit pas etre vide
 Post-condition: le deuxième maillon est maintenant en tete
                   Si file ne contient qu'un éléemnt, le file est initialisée
 */
+<<<<<<< HEAD
+void retireTete(FileAttente * file){
+    maillon * tmp;
+    if((*file).tete == (*file).queu){
+        tmp = (*file).tete;
+        delete (*tmp).nom;
+        delete tmp;
+        initFileAttente(file);
+    }else{
+        tmp = (*file).tete;
+        (*file).tete = (*tmp).suivant;
+=======
 void retireTete(FileAttente &file){
     maillon * tmp;
     if(file.tete == file.queu){
@@ -74,6 +123,7 @@ void retireTete(FileAttente &file){
     }else{
         tmp = file.tete;
         file.tete = (*tmp).suivant;
+>>>>>>> 429bfe217736ff2b90269598e6f8bc86781c56b1
         delete tmp;
     }
 }
@@ -107,5 +157,8 @@ int longueurFile(const FileAttente file){
 
     return lg;
 }
+<<<<<<< HEAD
+=======
 
 
+>>>>>>> 429bfe217736ff2b90269598e6f8bc86781c56b1

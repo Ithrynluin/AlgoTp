@@ -1,7 +1,6 @@
 #include <iostream>
 #include "pile.h"
-
-
+#include "fileAttente.h"
 using namespace std;
 
 /*
@@ -9,20 +8,36 @@ using namespace std;
  Para
 Pile initPile(Pile pile){
     pile.tete = NULL;
+=======
+void desinitPile(Pile pile){
+
+  while(pile.tete != NULL){
+      depiler(Pile);
+  }
+
 }
 
-void empliler(Pile &pile, FileAttente file){
+void depiler(Pile pile){
+    element *tmp;
 
-    element e;
-    e.file = file;
-    if(pile.tete != NULL){
-        e.suivant = pile.tete;
-    }else{
-        e.suisvant = NULL
+    if(pile.tete != NULL) {
+        if ((pile.tete).suivant == NULL) {
+            tmp pile.tete;
+            desinitFileAttente(tmp.file);
+            delete tmp.file;
+            delete tmp;
+            initPile(pile);
+        } else {
+            tmp=pile.tete;
+            pile.tete=tmp.suivant;
+            delete tmp.file;
+            delete tmp;
+        }
     }
-    pile.tete = &e;
 }
+
 
 element sommet(Pile pile){
     return pile.tete;
 }
+
