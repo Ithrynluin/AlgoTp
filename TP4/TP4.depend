@@ -41,3 +41,24 @@
 	<cstring>
 	"pile.h"
 
+1413370255 source:/home/mardaspan/Documents/informatique/M3103_Algorithme_avancée/github/AlgoTp/TP4/fileAttente.cpp
+	<iostream>
+	<cstring>
+	"fileAttente.h"
+
+1413370255 /home/mardaspan/Documents/informatique/M3103_Algorithme_avancée/github/AlgoTp/TP4/fileAttente.h
+
+1413370255 source:/home/mardaspan/Documents/informatique/M3103_Algorithme_avancée/github/AlgoTp/TP4/main.cpp
+	<iostream>
+	<stdio.h>
+	"fileAttente.h"
+	"pile.h"
+
+1413370255 /home/mardaspan/Documents/informatique/M3103_Algorithme_avancée/github/AlgoTp/TP4/pile.h
+	"fileAttente.h"
+
+1413371904 source:/home/mardaspan/Documents/informatique/M3103_Algorithme_avancée/github/AlgoTp/TP4/pile.cpp
+	<iostream>
+	<cstring>
+	"pile.h"
+
