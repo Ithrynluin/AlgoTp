@@ -9,13 +9,11 @@ using namespace std;
 
 int main(){
     FileAttente file;
-    FileAttente fileCopie, fileUndo;
-    element eltUndo;
-    Pile pile;
     int choix;
     int num;
     char nom[30];
     maillon *tmp;
+    Pile pile;
 
     initFileAttente(file);
     initPile(pile);
@@ -32,12 +30,11 @@ int main(){
             cout << "Votre choix : ";
             cin >> choix;
 
-        }while(choix > 5 || choix < 1);
+        }while(choix > 6 || choix < 1);
 
         switch(choix){
             case 1:
-                fileCopie=copier(file);
-                empiler(pile, &fileCopie);
+                enregistreEtat(pile, file);
                 cout << "Entrer le numero de la personne : ";
                 cin >> num;
                 cout << "Entrer le nom de la personne : ";
@@ -47,8 +44,7 @@ int main(){
                 break;
             case 2:
                 if(file.tete != NULL){
-                    copier(file);
-                    empiler(pile, &fileCopie);
+                    enregistreEtat(pile, file);
                     retireTete(file);
                     cout << "Suppresion effectuée" << endl << endl;
                 }else{
@@ -68,15 +64,12 @@ int main(){
                 cout << "La longueur de la liste est de " << longueurFile(file) << endl << endl;
                 break;
             case 5:
-                eltUndo = sommet(pile);
-                fileUndo = eltUndo.file;
-                cout << "Avt desinit" << endl;
-                desinitFileAttente(file);
-                cout << "Apr desinit" << endl;
-                file = fileUndo;
-                cout << "Avt depiler" << endl;
-                depiler(pile);
-                cout << "Undo effectué" << endl << endl;
+                if(longueurPile(pile) != 0){
+                    undo(pile, file);
+                    cout << "Undo effectué" << endl;
+                }else{
+                    cout << "Opération impossible" << endl;
+                }
                 break;
             case 6:
                 cout << "Au revoir" << endl;
@@ -87,10 +80,11 @@ int main(){
         cout << endl;
     }while(choix != 6);
 
-
-
-    desinitFileAttente(file);
     desinitPile(pile);
+    desinitFileAttente(file);
 
     return 0;
 }
+
+
+

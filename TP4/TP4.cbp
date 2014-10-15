@@ -38,6 +38,7 @@
 		<Unit filename="pile.h" />
 		<Extensions>
 			<code_completion />
+			<envvars />
 			<debugger />
 		</Extensions>
 	</Project>

@@ -2,25 +2,27 @@
 #define PILE_H_INCLUDED
 
 #include "fileAttente.h"
+
 typedef struct e {
-    FileAttente file;
-    struct e * suivant;
+    FileAttente *file;
+    e * suivant;
 } element;
 
 typedef struct {
     element * tete;
 } Pile;
 
-Pile initPile(Pile pile);
-
-void empiler(Pile &pile, FileAttente *file);
-
-element sommet(Pile pile);
-
+void initPile(Pile &pile);
 void desinitPile(Pile &pile);
-
+void empiler(Pile &pile, FileAttente *file);
 void depiler(Pile &pile);
+element * sommet(Pile pile);
 
-FileAttente copier(FileAttente file);
+FileAttente* copierFileAttente(const FileAttente source);
+
+int longueurPile(Pile pile);
+
+void undo(Pile &pile, FileAttente &file);
+void enregistreEtat(Pile &pile, const FileAttente file);
 
 #endif // PILE_H_INCLUDED

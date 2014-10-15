@@ -6,8 +6,38 @@
 
 1412772400 /home/clement/Git/AlgoTp/TP4/fileAttente.h
 
-1412772530 source:/home/clement/Git/AlgoTp/TP4/main.cpp
+1413318725 source:/home/clement/Git/AlgoTp/TP4/main.cpp
 	<iostream>
 	<stdio.h>
 	"fileAttente.h"
+	"pile.h"
+
+1413318725 /home/clement/Git/AlgoTp/TP4/pile.h
+	"fileAttente.h"
+
+1413318775 source:/home/clement/Git/AlgoTp/TP4/pile.cpp
+	<iostream>
+	<cstring>
+	"pile.h"
+
+1412772530 source:/home/clement/Dropbox/IUT/Semestre 3/Partage Kevin Clément/Algo/TP4/Version_remasteriser_où_les_fonctions_pile_fonctionne_!!!!/fileAttente.cpp
+	<iostream>
+	<cstring>
+	"fileAttente.h"
+
+1412772400 /home/clement/Dropbox/IUT/Semestre 3/Partage Kevin Clément/Algo/TP4/Version_remasteriser_où_les_fonctions_pile_fonctionne_!!!!/fileAttente.h
+
+1413363319 source:/home/clement/Dropbox/IUT/Semestre 3/Partage Kevin Clément/Algo/TP4/Version_remasteriser_où_les_fonctions_pile_fonctionne_!!!!/main.cpp
+	<iostream>
+	<stdio.h>
+	"fileAttente.h"
+	"pile.h"
+
+1413363070 /home/clement/Dropbox/IUT/Semestre 3/Partage Kevin Clément/Algo/TP4/Version_remasteriser_où_les_fonctions_pile_fonctionne_!!!!/pile.h
+	"fileAttente.h"
+
+1413363070 source:/home/clement/Dropbox/IUT/Semestre 3/Partage Kevin Clément/Algo/TP4/Version_remasteriser_où_les_fonctions_pile_fonctionne_!!!!/pile.cpp
+	<iostream>
+	<cstring>
+	"pile.h"
 

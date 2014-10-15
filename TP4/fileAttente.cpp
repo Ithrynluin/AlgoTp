@@ -56,19 +56,6 @@ void ajoutPers (FileAttente &f, const int num, char nom[]) {
         f.queu = np;
     }
 }
-
-void ajoutPers(FileAttente file, maillon *m){
-    maillon *tmp;
-    (*m).suivant = NULL;
-    if(file.tete == NULL){
-        file.tete = m;
-        file.queu = m;
-    }else{
-        tmp = file.queu;
-        (*tmp).suivant = m;
-        file.queu = m;
-    }
-}
 /*
 Procédure qui retire une personne en queue de file
 Paramètre entrée: file d'attente initialiser

@@ -47,7 +47,7 @@ Paramètres de sortie : file d'attente avec le nouveau maillon en queue
 Pré-condition : la file d'attente doit être initialisé
 Post-conditon : le nouveau maillon est en queue de file.
 */
-void ajoutPers(FileAttente &f, const int num, char nom[]);
+void ajoutPers (FileAttente &f, const int num, char nom[]);
 
 /*
 Procédure qui retire une personne en queue de file
@@ -75,6 +75,4 @@ Retourne: la longueur de la file d'attente
 Pré-condition: la file doit être initialisé
 */
 int longueurFile(const FileAttente file);
-
-void ajoutPers(FileAttente file, maillon * m);
 #endif // FILEATTENTE_H_INCLUDED
