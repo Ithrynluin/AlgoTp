@@ -43,4 +43,10 @@ maillon * precedent(maillon *p) {
     }
     return tmp;
 }
+/*
+Procédure pour effectuer une rotation
+*/
+void rotation(maillon *p) {
+    p = (*p).suivant;
+}
 
