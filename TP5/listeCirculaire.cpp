@@ -76,7 +76,10 @@ void insere(maillon **p, const int numero){
     *p = m;
 }
 /*
-Fonction permettant de connaitre le nombre de maillon
+Fonction permettant de connaitre le nombre de maillon contenu dans la liste
+Paramètre d'entrée : liste initialisée
+Paramètre de sortie : retourne le nombre de maillons de la liste
+Pré-condition : la liste doit etre initialisée
 */
 int nombreMaillons(maillon *liste) {
     int nb;
