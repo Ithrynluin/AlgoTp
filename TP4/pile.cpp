@@ -72,7 +72,7 @@ Paramètre sortie : retourne la file d'attente en tete de la pile
 Pré-condition : la pile doit être initialisée
 Post-condition : retourne l'élement de tete ou NULL si la pile est vide
 */
-element * sommet(Pile pile){
+element * sommet(const Pile pile){
     return pile.tete;
 }
 /*
@@ -130,7 +130,7 @@ Paramètre d'entrée: pile initialisée
 Retourne: la longueur de la pile
 Pré-condition: la pile doit être initialisée
 */
-int longueurPile(Pile pile){
+int longueurPile(const Pile pile){
     element *e;
     e = pile.tete;
     int l = 0;
