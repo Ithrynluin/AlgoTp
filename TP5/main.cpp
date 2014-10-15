@@ -16,7 +16,7 @@ int main(){
             cout << "2- Ajouter un element" << endl;
             cout << "3- Supprimer un element" << endl;
             cout << "4- Faire une rotation" << endl;
-            cout << "5- Undo" << endl;
+            cout << "5- Nombre de maillons" << endl;
             cout << "6- Quitter" << endl;
             cout << "Votre choix : ";
             cin >> choix;
@@ -39,7 +39,7 @@ int main(){
             case 4:
                 break;
             case 5:
-
+                cout << "La liste a " << nombreMaillons(m) << " maillons" << endl;
                 break;
             case 6:
                 cout << "Au revoir" << endl;

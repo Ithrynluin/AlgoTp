@@ -82,7 +82,7 @@ int nombreMaillons(maillon *liste) {
     int nb;
     maillon *compteur;
 
-    if ((*liste)=NULL) {
+    if (liste==NULL) {
         nb=0;
     } else {
         compteur=liste;
