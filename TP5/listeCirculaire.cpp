@@ -20,12 +20,27 @@ void afficherListe(maillon *p) {
 
         if (p != null) {
             tmp=p;
-            cout << "Maillon " << (*p).numero << endl;
-            tmp=(*tmp).suivant;
-            while (tmp != p) {
+            while ((*tmp).suivant != p) {
                 cout << "Maillon " << (*tmp).numero << endl;
                 tmp=(*tmp).suivant;
             }
         }
+}
+/*
+Fonction permettant d'accéder au maillon précédent celui qui est point" en entrée
+Paramètre entrée : liste initialisée
+Paramètre sortie : retourne le maillon précédent
+Pré-condition : la liste doit etre initialisée
+*/
+maillon * precedent(maillon *p) {
+    maillon *tmp;
+
+    tmp=p;
+    if (p != null) {
+        while ((*tmp).suivant != p) {
+            tmp=(*tmp).suivant;
+        }
+    }
+    return tmp;
 }
 
