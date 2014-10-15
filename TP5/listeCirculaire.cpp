@@ -50,3 +50,22 @@ void rotation(maillon *p) {
     p = (*p).suivant;
 }
 
+void insere(maillon **p, int numero){
+    maillon *m;
+    maillon *prec;
+    maillon *suivant;
+
+    m = new maillon;
+    (*m).numero = numero;
+
+    if((*p) != NULL){
+        prec = precedent((*p));
+        suivant = (**p).suivant;
+        (*m).suivant = suivant;
+        (*prec).suivant = m;
+    }else{
+        (*m).suivant = m;
+    }
+    p = m;
+}
+
