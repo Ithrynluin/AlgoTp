@@ -6,6 +6,7 @@ typedef struct m {
     m * suivant;
 } maillon;
 
+void initListeCirculaire(maillon **m);
 
 
 #endif // LISTECIRCULAIRE_H_INCLUDED
