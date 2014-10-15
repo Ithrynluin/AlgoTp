@@ -13,10 +13,10 @@ Paramètre entrée: liste initialisée
 Paramètre sortie: affichage de la liste
 Pré-condition: la liste ne doit pas etre vide
 */
-void afficherListe(const maillon *p) {
+void afficherListe(maillon *p) {
         maillon *tmp;
 
-        if (p != null) {
+        if (p != NULL) {
             tmp=p;
             if ((*p).suivant == NULL) {
                 cout << "Maillon " << (*tmp).numero << endl;
@@ -35,11 +35,11 @@ Paramètre entrée : liste initialisée
 Paramètre sortie : retourne le maillon précédent
 Pré-condition : la liste doit etre initialisée
 */
-maillon * precedent(const maillon *p) {
+maillon * precedent(maillon *p) {
     maillon *tmp;
 
     tmp=p;
-    if (p != null) {
+    if (p != NULL) {
         while ((*tmp).suivant != p) {
             tmp=(*tmp).suivant;
         }
@@ -73,7 +73,7 @@ void insere(maillon **p, const int numero){
     }else{
         (*m).suivant = m;
     }
-    p = m;
+    *p = m;
 }
 /*
 Fonction permettant de connaitre le nombre de maillon contenu dans la liste

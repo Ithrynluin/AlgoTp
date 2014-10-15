@@ -7,8 +7,8 @@ typedef struct m {
 } maillon;
 
 void initListeCirculaire(maillon **m);
-void afficherListe(const maillon *p);
-maillon * precedent(const maillon *p);
+void afficherListe(maillon *p);
+maillon * precedent(maillon *p);
 void rotation(maillon **pp);
 void insere(maillon **p, const int numero);
 
