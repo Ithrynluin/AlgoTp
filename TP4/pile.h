@@ -16,11 +16,11 @@ void initPile(Pile &pile);
 void desinitPile(Pile &pile);
 void empiler(Pile &pile, FileAttente *file);
 void depiler(Pile &pile);
-element * sommet(Pile pile);
+element * sommet(const Pile pile);
 
 FileAttente* copierFileAttente(const FileAttente source);
 
-int longueurPile(Pile pile);
+int longueurPile(const Pile pile);
 
 void undo(Pile &pile, FileAttente &file);
 void enregistreEtat(Pile &pile, const FileAttente file);
