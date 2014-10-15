@@ -18,12 +18,10 @@ void afficherListe(maillon *p) {
 
         if (p != NULL) {
             tmp=p;
-            if ((*p).suivant == p) {
-                cout << "Maillon " << (*tmp).numero << endl;
-                tmp=(*tmp).suivant;
-            } else {
-                cout << "while " << endl;
-                while (tmp != precedent(p)) {
+            cout << "Maillon " << (*tmp).numero << endl;
+            tmp=(*tmp).suivant;
+            if ((*p).suivant != p) {
+                while (tmp != p) {
                     cout << "Maillon " << (*tmp).numero << endl;
                     tmp=(*tmp).suivant;
                 }
@@ -68,7 +66,7 @@ void insere(maillon **p, const int numero){
 
     if((*p) != NULL){
         prec = precedent((*p));cout << "precedent " << (*prec).numero << endl;
-        suivant = (**p).suivant;cout << "suivant " << (*suivant).numero << endl;
+        suivant = (*p);cout << "suivant " << (*suivant).numero << endl;
         (*m).suivant = suivant;
         (*prec).suivant = m;
     }else{
