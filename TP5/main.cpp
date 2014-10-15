@@ -1,18 +1,21 @@
 #include <iostream>
-
+#include "listeCirculaire.h"
 using namespace std;
 
 int main(){
+    maillon *m;
+    int choix;
+    int numero;
 
-
+    initListeCirculaire(&m);
 
     do{
         do{
-            cout << "FILE D'ATTENTE" << endl;
-            cout << "1- Ajouter une personne en queue" << endl;
-            cout << "2- Retirer la personne en tête" << endl;
-            cout << "3- Consulter la personne en tête de file" << endl;
-            cout << "4- Calculer la longueur de la fime d'attente" << endl;
+            cout << "LISTE CIRCULAIRE" << endl;
+            cout << "1- Afficher la liste" << endl;
+            cout << "2- Ajouter un element" << endl;
+            cout << "3- Supprimer un element" << endl;
+            cout << "4- Faire une rotation" << endl;
             cout << "5- Undo" << endl;
             cout << "6- Quitter" << endl;
             cout << "Votre choix : ";
@@ -22,10 +25,13 @@ int main(){
 
         switch(choix){
             case 1:
-
+                afficherListe(m);
                 break;
             case 2:
-
+                cout << "Entrer un numero : ";
+                cin >> numero;
+                insere(&m, numero);
+                cout << "Ajout effectué" << endl;
                 break;
             case 3:
 
