@@ -15,7 +15,7 @@ Paramètre entrée: liste initialisée
 Paramètre sortie: affichage de la liste
 Pré-condition: la liste ne doit pas etre vide
 */
-void afficherListe(maillon *p) {
+void afficherListe(const maillon *p) {
         maillon *tmp;
 
         if (p != null) {
@@ -32,7 +32,7 @@ Paramètre entrée : liste initialisée
 Paramètre sortie : retourne le maillon précédent
 Pré-condition : la liste doit etre initialisée
 */
-maillon * precedent(maillon *p) {
+maillon * precedent(const maillon *p) {
     maillon *tmp;
 
     tmp=p;
@@ -44,13 +44,17 @@ maillon * precedent(maillon *p) {
     return tmp;
 }
 /*
-Procédure pour effectuer une rotation
+Procédure pour effectuer une rotation dans la liste
+Paramètre entrée : liste initialisée
+Paramètre sortie : liste ayant subi la rotation
+Pré-condition : la liste doit etre initialisée et non nulle
+Post-condition : la liste a subi une rotation
 */
-void rotation(maillon *p) {
-    p = (*p).suivant;
+void rotation(maillon **pp) {
+    (*pp) = (**pp).suivant;
 }
 
-void insere(maillon **p, int numero){
+void insere(maillon **p, const int numero){
     maillon *m;
     maillon *prec;
     maillon *suivant;

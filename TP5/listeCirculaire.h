@@ -7,9 +7,10 @@ typedef struct m {
 } maillon;
 
 void initListeCirculaire(maillon **m);
-void afficherListe(maillon *p);
-maillon * precedent(maillon *p);
-void insere(maillon **p, int numero);
+void afficherListe(const maillon *p);
+maillon * precedent(const maillon *p);
+void rotation(maillon **pp);
+void insere(maillon **p, const int numero);
 
 
 #endif // LISTECIRCULAIRE_H_INCLUDED
