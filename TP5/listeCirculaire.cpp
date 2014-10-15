@@ -1,7 +1,5 @@
 #include <iostream>
-
 #include "listeCirculaire.h"
-
 using namespace std;
 
 
@@ -20,9 +18,14 @@ void afficherListe(maillon *p) {
 
         if (p != NULL) {
             tmp=p;
-            while ((*tmp).suivant != p) {
+            if ((*p).suivant == NULL) {
                 cout << "Maillon " << (*tmp).numero << endl;
                 tmp=(*tmp).suivant;
+            } else {
+                while ((*tmp).suivant != p) {
+                    cout << "Maillon " << (*tmp).numero << endl;
+                    tmp=(*tmp).suivant;
+                }
             }
         }
 }
@@ -72,4 +75,21 @@ void insere(maillon **p, const int numero){
     }
     *p = m;
 }
+/*
+Fonction permettant de connaitre le nombre de maillon
+*/
+int nombreMaillons(maillon *liste) {
+    int nb;
+    maillon *compteur;
 
+    if ((*liste)=NULL) {
+        nb=0;
+    } else {
+        compteur=liste;
+        while (compteur != precedent(liste)) {
+            compteur=(*compteur).suivant;
+            nb++;
+        }
+    }
+    return nb;
+}
