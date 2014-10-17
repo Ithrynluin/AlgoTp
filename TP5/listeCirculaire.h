@@ -12,6 +12,7 @@ maillon * precedent(maillon *p);
 void rotation(maillon **pp);
 void insere(maillon **p, const int numero);
 int nombreMaillons(maillon *liste);
+void supprime(maillon **p);
 
 
 #endif // LISTECIRCULAIRE_H_INCLUDED
