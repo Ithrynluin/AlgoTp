@@ -7,6 +7,10 @@ void initListeCirculaire(maillon **m){
     *m = NULL;
 }
 
+void desinitListeCirculaire(maillon **m){
+    *m = NULL;
+}
+
 /*
 Procédure permettant l'affichage d'une liste circulaire
 Paramètre entrée: liste initialisée

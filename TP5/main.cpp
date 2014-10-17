@@ -51,5 +51,8 @@ int main(){
         }
         cout << endl;
     }while(choix != 6);
+
+    initListeCirculaire(&m);
+
     return 0;
 }
