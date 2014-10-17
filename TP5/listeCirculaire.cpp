@@ -8,7 +8,9 @@ void initListeCirculaire(maillon **m){
 }
 
 void desinitListeCirculaire(maillon **m){
-    *m = NULL;
+    while (*m != NULL) {
+            supprime(m);
+    }
 }
 
 /*
