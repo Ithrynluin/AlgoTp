@@ -34,12 +34,20 @@ int main(){
                 cout << "Ajout effectué" << endl;
                 break;
             case 3:
-                supprime(&m);
-                cout << "Suppression effectué " << endl;
+                if(m != NULL){
+                    supprime(&m);
+                    cout << "Suppression effectué " << endl;
+                }else{
+                    cout << "La liste est vide " << endl;
+                }
                 break;
             case 4:
-                rotation(&m);
-                cout << "Rotation effectuée" << endl;
+                if(m != NULL){
+                    rotation(&m);
+                    cout << "Rotation effectuée" << endl;
+                }else{
+                    cout << "La liste est vide " << endl;
+                }
                 break;
             case 5:
                 cout << "La liste a " << nombreMaillons(m) << " maillons" << endl;
