@@ -37,6 +37,8 @@ int main(){
 
                 break;
             case 4:
+                rotation(&m);
+                cout << "Rotation effectuée" << endl;
                 break;
             case 5:
                 cout << "La liste a " << nombreMaillons(m) << " maillons" << endl;
