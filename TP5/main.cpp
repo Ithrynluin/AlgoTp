@@ -53,7 +53,7 @@ int main(){
         cout << endl;
     }while(choix != 6);
 
-    initListeCirculaire(&m);
+    desinitListeCirculaire(&m);
 
     return 0;
 }
