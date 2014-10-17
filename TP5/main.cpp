@@ -34,7 +34,8 @@ int main(){
                 cout << "Ajout effectué" << endl;
                 break;
             case 3:
-
+                supprime(&m);
+                cout << "Suppression effectué " << endl;
                 break;
             case 4:
                 break;

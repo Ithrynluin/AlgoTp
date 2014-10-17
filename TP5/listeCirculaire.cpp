@@ -65,8 +65,8 @@ void insere(maillon **p, const int numero){
     (*m).numero = numero;
 
     if((*p) != NULL){
-        prec = precedent((*p));cout << "precedent " << (*prec).numero << endl;
-        suivant = (*p);cout << "suivant " << (*suivant).numero << endl;
+        prec = precedent((*p));
+        suivant = (*p);
         (*m).suivant = suivant;
         (*prec).suivant = m;
     }else{
@@ -95,4 +95,22 @@ int nombreMaillons(maillon *liste) {
         }
     }
     return nb;
+}
+
+void supprime(maillon **p){
+    maillon * pre;
+    maillon * suiv;
+
+    if(*p != NULL){
+        suiv = (**p).suivant;
+        if(*p == suiv){
+            delete *p;
+            *p = NULL;
+        }else{
+            pre = precedent(*p);
+            delete *p;
+            *p = pre;
+            (**p).suivant = suiv;
+        }
+    }
 }
