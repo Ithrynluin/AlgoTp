@@ -2,11 +2,21 @@
 #include "listeCirculaire.h"
 using namespace std;
 
-
+/*
+Procédure qui initialise une liste
+Paramètre de sortie: liste initialisée
+Post-condition: le pointeur pointe sur rien
+*/
 void initListeCirculaire(maillon **m){
     *m = NULL;
 }
-
+/*
+Procédure qui supprimer tous les élèment de la liste
+Paramètre d'entrée: liste à vider
+Paramètre de sortie: liste vide
+Pré-condition: La liste doit être initialisée
+Post-condition: La liste est vide
+*/
 void desinitListeCirculaire(maillon **m){
     while (*m != NULL) {
             supprime(m);
@@ -61,7 +71,14 @@ Post-condition : la liste a subi une rotation
 void rotation(maillon **pp) {
     (*pp) = (**pp).suivant;
 }
-
+/*
+Procédure permettant d'ajouter un maillon dans la liste
+Paramètres d'entrée : liste à laquelle on souhaite ajouter un maillon
+                        numero du maillon à ajouter
+Paramètres de sortie : liste pointant vers le maillon ajouté
+Pré-condition : la liste doit être initialisée
+Post-conditon : le nouveau maillon est le premier maillon pointé par la liste
+*/
 void insere(maillon **p, const int numero){
     maillon *m;
     maillon *prec;
@@ -102,7 +119,13 @@ int nombreMaillons(maillon *liste) {
     }
     return nb;
 }
-
+/*
+Procédure qui retire le maillon de la liste pointé par p
+Paramètre entrée: liste initialisée
+Paramètre sortie: liste avec le maillon retiré
+Pré-condition: la liste ne doit pas etre vide
+Post-condition: si la liste ne contient plus de maillon, elle est initialisée
+*/
 void supprime(maillon **p){
     maillon * pre;
     maillon * suiv;
@@ -111,7 +134,7 @@ void supprime(maillon **p){
         suiv = (**p).suivant;
         if(*p == suiv){
             delete *p;
-            *p = NULL;
+            initListeCirculaire(p);
         }else{
             pre = precedent(*p);
             delete *p;
