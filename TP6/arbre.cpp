@@ -78,7 +78,7 @@ bool estVide (abin a) {
 
 /*
 Fonction renvoyant la racine d'un arbre
-Paramètre d'entré : arbre étudié
+Paramètre d'entrée : arbre étudié
 Paramètre de sortie : noeud racine de l'arbre placé en paramètre
 Pré-condition : l'arbre doit être initialisé
 */
@@ -87,5 +87,25 @@ noeud racine (abin a) {
         return (*a);
     } else {
         return NULL;
+    }
+}
+
+/*
+Fonction permettant de connaitre la taille d'un arbre
+Paramètre d'entrée : arbre initialisé
+Paramètre de sortie : entier indiquant la taille de l'arbre
+Pré-condition : l'arbre doit être initialisé
+*/
+int hauteur (abin a) {
+    int g, d;
+
+    if (a != NULL) {
+        g = 0;
+        d = 0;
+        g = hauteur(a.ag);
+        d = hauteur(a.ad);
+        return (1+(g > d) ? g : d);
+    } else {
+        return 0;
     }
 }

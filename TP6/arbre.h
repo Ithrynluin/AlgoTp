@@ -20,5 +20,6 @@ abin droite (abin a);
 abin enracine(const char etiq, abin ag, abin ad);
 bool estVide (abin a);
 noeud racine (abin a);
+int hauteur (abin a);
 
 #endif // ARBRE_H_INCLUDED
