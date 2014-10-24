@@ -53,7 +53,7 @@ noeud droite (abin a) {
 /*
 Fonction qui permet la création d'une racine entre deux arbres
 Paramètres d'entrée : nom de la racine (en un seul caractère), et les deux arbres à enraciner
-Paramètre de sortie un nouvel arbre rassemblant les deux arbres en paramètre
+Paramètre de sortie un noguvel arbre rassemblant les deux arbres en paramètre
 Pré-condition : les arbres ne doivent pas être vides
 */
 abin enracine(const char etiq, abin ag, abin ad){
@@ -63,4 +63,12 @@ abin enracine(const char etiq, abin ag, abin ad){
     (*a).ag = ag;
     (*a).ad = ad;
     return a;
+}
+
+/*Fonction estVide (ab : ArbreBin) retourne booléen
+Début
+	Retourne (ab = NULL)
+Fin*/
+bool estVide (abin a) {
+    return (a = NULL);
 }
