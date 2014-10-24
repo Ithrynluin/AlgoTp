@@ -7,6 +7,10 @@ typedef struct n {
     struct n* ad;
 } noeud;
 
-typedef abin noeud *;
+typedef noeud * abin;
+
+void arbnouv (abin a);
+void arbdetruit (abin a);
+abin enracine(const char etiq, abin ag, abin ad)
 
 #endif // ARBRE_H_INCLUDED
