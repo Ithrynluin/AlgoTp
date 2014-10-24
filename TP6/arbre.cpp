@@ -65,10 +65,26 @@ abin enracine(const char etiq, abin ag, abin ad){
     return a;
 }
 
-/*Fonction estVide (ab : ArbreBin) retourne booléen
-Début
-	Retourne (ab = NULL)
-Fin*/
+/*
+Fonction booléenne permettant de savoir si un arbre est vide ou non
+Paramètre d'entrée : arbre étudié
+Paramètre de sortie : booléen indiquant si l'élément est null ou non
+Pré-condition : l'arbre placé en paramètre doit être initialisé
+*/
 bool estVide (abin a) {
-    return (a = NULL);
+    return (a == NULL);
+}
+
+/*
+Fonction renvoyant la racine d'un arbre
+Paramètre d'entré : arbre étudié
+Paramètre de sortie : noeud racine de l'arbre placé en paramètre
+Pré-condition : l'arbre doit être initialisé
+*/
+noeud racine (abin a) {
+    if(a != NULL) {
+        return (*a);
+    } else {
+        return NULL;
+    }
 }
