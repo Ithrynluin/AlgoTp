@@ -23,5 +23,7 @@ int hauteur (abin a);
 abin racine (abin a);
 char charEtiquette (noeud * n);
 char * parcoursSuffixe(abin a);
+char * parcoursInfixe(abin a);
+char * parcoursPrefixe(abin a);
 
 #endif // ARBRE_H_INCLUDED
