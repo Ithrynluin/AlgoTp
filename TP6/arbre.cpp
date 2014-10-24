@@ -1,6 +1,5 @@
-#include <iostream>
 #include "arbre.h"
-using namespace std;
+
 
 /*
 Procédure qui initialise un arbre
@@ -24,6 +23,7 @@ void arbdetruit (abin a) {
         delete (a);
     }
 }
+<<<<<<< HEAD
 /*
 Fonction qui renvoie l'élément à gauche du noeud choisi
 Paramètre d'entrée : pointeur de noeud (abin)
@@ -49,4 +49,14 @@ noeud droite (abin a) {
     } else {
         return NULL;
     }
+=======
+
+abin enracine(const char etiq, abin ag, abin ad){
+    abin a;
+
+    (*a).etiquette = etiq;
+    (*a).ag = ag;
+    (*a).ad = ad;
+    return a;
+>>>>>>> 88f0ae3f262c299f958440a9aed897e18c961344
 }
