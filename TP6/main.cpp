@@ -6,6 +6,7 @@ using namespace std;
 int main(){
 
     abin a, ag, ad, ag1, ad1;
+    char *par;
 
     //Branche gauche
     arbnouv(ag);
@@ -36,6 +37,11 @@ int main(){
 
     arbnouv(a);
     a = enracine('a', ag, ad);
+
+    cout << "Construction de l'arbre terminé " << endl;
+
+    par = parcoursSuffixe(a);
+    cout << par << endl;
 
     return 0;
 }

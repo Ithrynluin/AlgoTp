@@ -2,6 +2,7 @@
 #define ARBRE_H_INCLUDED
 
 #include <iostream>
+#include <cstring>
 
 typedef struct n {
     char etiquette;
@@ -18,9 +19,9 @@ abin gauche (abin a);
 abin droite (abin a);
 abin enracine(const char etiq, abin ag, abin ad);
 bool estVide (abin a);
-noeud racine (abin a);
 int hauteur (abin a);
 abin racine (abin a);
-char charEtiquette (noeud n);
+char charEtiquette (noeud * n);
+char * parcoursSuffixe(abin a);
 
 #endif // ARBRE_H_INCLUDED
