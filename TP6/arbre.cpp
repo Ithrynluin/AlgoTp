@@ -23,7 +23,7 @@ void arbdetruit (abin a) {
         delete (a);
     }
 }
-<<<<<<< HEAD
+
 /*
 Fonction qui renvoie l'élément à gauche du noeud choisi
 Paramètre d'entrée : pointeur de noeud (abin)
@@ -49,8 +49,13 @@ noeud droite (abin a) {
     } else {
         return NULL;
     }
-=======
 
+/*
+Fonction qui permet la création d'une racine entre deux arbres
+Paramètres d'entrée : nom de la racine (en un seul caractère), et les deux arbres à enraciner
+Paramètre de sortie un nouvel arbre rassemblant les deux arbres en paramètre
+Pré-condition : les arbres ne doivent pas être vides
+*/
 abin enracine(const char etiq, abin ag, abin ad){
     abin a;
 
@@ -58,5 +63,4 @@ abin enracine(const char etiq, abin ag, abin ad){
     (*a).ag = ag;
     (*a).ad = ad;
     return a;
->>>>>>> 88f0ae3f262c299f958440a9aed897e18c961344
 }
