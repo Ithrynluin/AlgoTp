@@ -5,10 +5,10 @@ using namespace std;
 
 int main(){
 
-    abin a;
+    abin a, ag, ad;
 
-    arbnouv(a);
-    enracine('a', NULL, NULL);
-
+    //Branche gauche
+    abrnouv(ag);
+    enracine('')
     return 0;
 }
