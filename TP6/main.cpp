@@ -43,5 +43,11 @@ int main(){
     par = parcoursSuffixe(a);
     cout << par << endl;
 
+    par = parcoursInfixe(a);
+    cout << par << endl;
+
+    par = parcoursPrefixe(a);
+    cout << par << endl;
+
     return 0;
 }

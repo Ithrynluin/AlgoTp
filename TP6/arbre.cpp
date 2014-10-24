@@ -142,3 +142,46 @@ char * parcoursSuffixe(abin a){
     return e;
 }
 
+char * parcoursInfixe(abin a){
+    char * eg, *ed, *r,*e;
+    char et;
+    if(a != NULL){
+        eg = parcoursInfixe((*a).ag);
+        et = charEtiquette(racine(a));
+        ed = parcoursInfixe((*a).ad);
+        e = new char[sizeof(eg) + sizeof(ed) + 1];
+        r = new char[2];
+        r[0] = et;
+        r[1] = '\0';
+        e = eg;
+        strcat(e, r);
+        strcat(e, ed);
+    }else{
+        e = new char;
+        e[0] = '\0';
+    }
+    return e;
+}
+
+char * parcoursPrefixe(abin a){
+    char * eg, *ed, *r,*e;
+    char et;
+    if(a != NULL){
+        eg = parcoursPrefixe((*a).ag);
+        ed = parcoursPrefixe((*a).ad);
+        et = charEtiquette(racine(a));
+
+        e = new char[sizeof(eg) + sizeof(ed) + 1];
+        r = new char[2];
+        r[0] = et;
+        r[1] = '\0';
+        e = eg;
+        strcat(e, ed);
+        strcat(e, r);
+    }else{
+        e = new char;
+        e[0] = '\0';
+    }
+    return e;
+
+}
