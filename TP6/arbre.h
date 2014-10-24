@@ -13,13 +13,13 @@ typedef noeud * abin;
 
 void arbnouv (abin a);
 void arbdetruit (abin a);
-noeud gauche (abin a);
-noeud droite (abin a);
+
 abin gauche (abin a);
 abin droite (abin a);
 abin enracine(const char etiq, abin ag, abin ad);
 bool estVide (abin a);
 noeud racine (abin a);
 int hauteur (abin a);
+abin racine (abin a);
 
 #endif // ARBRE_H_INCLUDED
