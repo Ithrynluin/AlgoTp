@@ -34,14 +34,11 @@ void afficherListe(maillon *p) {
 
         if (p != NULL) {
             tmp=p;
-            cout << "Maillon " << (*tmp).numero << endl;
-            tmp=(*tmp).suivant;
-            if ((*p).suivant != p) {
-                while (tmp != p) {
-                    cout << "Maillon " << (*tmp).numero << endl;
-                    tmp=(*tmp).suivant;
-                }
-            }
+            do{
+                cout << "Maillon " << (*tmp).numero << endl;
+                rotation(&tmp);
+            }while(tmp != p);
+
         }
 }
 /*
@@ -104,18 +101,17 @@ Paramètre de sortie : retourne le nombre de maillons de la liste
 Pré-condition : la liste doit etre initialisée
 */
 int nombreMaillons(maillon *liste) {
-    int nb;
+    int nb = 0;
     maillon *compteur;
 
     if (liste==NULL) {
         nb=0;
     } else {
         compteur=liste;
-        nb++;
-        while (compteur != precedent(liste)) {
-            compteur=(*compteur).suivant;
+        do{
             nb++;
-        }
+            rotation(&compteur);
+        }while(compteur != liste);
     }
     return nb;
 }
