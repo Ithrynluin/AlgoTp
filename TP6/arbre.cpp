@@ -7,7 +7,7 @@ Paramètre de sortie: arbre initialisé
 Post-condition: le pointeur (abin) pointe sur rien
 */
 void arbnouv (abin a) {
-    a = NULL;
+    a = new noeud;
 }
 /*
 Procédure qui supprimer tous les élèment de l'arbre
