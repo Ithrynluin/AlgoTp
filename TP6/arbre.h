@@ -13,8 +13,15 @@ typedef noeud * abin;
 
 void arbnouv (abin a);
 void arbdetruit (abin a);
+<<<<<<< HEAD
 noeud gauche (abin a);
 noeud droite (abin a);
+=======
+
+abin gauche (abin a);
+abin droite (abin a);
+
+>>>>>>> ead7f41054a8ef02c1a9f21bf899f65438201e38
 abin enracine(const char etiq, abin ag, abin ad);
 bool estVide (abin a);
 noeud racine (abin a);
