@@ -82,9 +82,9 @@ Paramètre d'entré : arbre étudié
 Paramètre de sortie : noeud racine de l'arbre placé en paramètre
 Pré-condition : l'arbre doit être initialisé
 */
-noeud racine (abin a) {
+abin racine (abin a) {
     if(a != NULL) {
-        return (*a);
+        return a;
     } else {
         return NULL;
     }
