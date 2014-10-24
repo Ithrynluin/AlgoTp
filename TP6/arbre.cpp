@@ -102,8 +102,8 @@ int hauteur (abin a) {
     if (a != NULL) {
         g = 0;
         d = 0;
-        g = hauteur(a.ag);
-        d = hauteur(a.ad);
+        g = hauteur((*a).ag);
+        d = hauteur((*a).ad);
         return (1+(g > d) ? g : d);
     } else {
         return 0;
@@ -116,10 +116,29 @@ Paramètre d'entrée : noeud choisi
 Paramètre de sortie : étiquette(=caractère) du noeud
 Pré-condition : le noeud doit être initialisé
 */
-char charEtiquette (noeud n) {
+char charEtiquette (noeud * n) {
     if(n != NULL) {
-        return n.etiquette;
+        return (*n).etiquette;
     } else {
         return NULL;
     }
 }
+
+char * parcoursSuffixe(abin a){
+    char * eg, *ed, *e;
+    char et;
+    if(a != NULL){
+        et = charEtiquette(racine(a));
+        eg = parcoursSuffixe((*a).ag);
+        ed = parcoursSuffixe((*a).ad);
+        e = new char[sizeof(eg) + sizeof(ed) + 1];
+        e[0] = et;
+        strcat(e, eg);
+        strcat(e, ed);
+    }else{
+        e = new char;
+        e[0] = '\0';
+    }
+    return e;
+}
+
