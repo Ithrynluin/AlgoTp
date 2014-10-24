@@ -3,6 +3,7 @@
 
 using namespace std;
 
+
 int main(){
 
     abin a, ag, ad, ag1, ad1;
