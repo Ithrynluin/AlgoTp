@@ -5,8 +5,8 @@ typedef struct n {
     char etiquette;
     struct n* ag;
     struct n* ad;
-} noed;
+} noeud;
 
-noed * abin;
+typedef abin noeud *;
 
 #endif // ARBRE_H_INCLUDED
