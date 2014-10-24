@@ -1,6 +1,8 @@
 #ifndef ARBRE_H_INCLUDED
 #define ARBRE_H_INCLUDED
 
+#include <iostream>
+
 typedef struct n {
     char etiquette;
     struct n* ag;
@@ -11,6 +13,6 @@ typedef noeud * abin;
 
 void arbnouv (abin a);
 void arbdetruit (abin a);
-abin enracine(const char etiq, abin ag, abin ad)
+abin enracine(const char etiq, abin ag, abin ad);
 
 #endif // ARBRE_H_INCLUDED

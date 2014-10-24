@@ -2,7 +2,7 @@
 
 
 void arbnouv (abin a) {
-    a = NULL;
+    a = new noeud;
 }
 
 void arbdetruit (abin a) {
