@@ -30,7 +30,7 @@ Paramètre d'entrée : pointeur de noeud (abin)
 Paramètre de sortie : noeud à gauche de celui choisi dans l'arbre
 Pré-condition : L'arbre doit être initialisé
 */
-noeud gauche (abin a) {
+abin gauche (abin a) {
     if (a != NULL) {
         return (*a).ag;
     } else {
@@ -43,12 +43,13 @@ Paramètre d'entrée : pointeur de noeud (abin)
 Paramètre de sortie : noeud à droite de celui choisi dans l'arbre
 Pré-condition : L'arbre doit être initialisé
 */
-noeud droite (abin a) {
+abin droite (abin a) {
     if(a != NULL) {
         return (*a).ad;
     } else {
         return NULL;
     }
+}
 
 /*
 Fonction qui permet la création d'une racine entre deux arbres
