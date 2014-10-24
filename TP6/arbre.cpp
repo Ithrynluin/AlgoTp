@@ -109,3 +109,17 @@ int hauteur (abin a) {
         return 0;
     }
 }
+
+/*
+Fonction permettant de renvoyer l'étiquette (=caractère) d'un noeud
+Paramètre d'entrée : noeud choisi
+Paramètre de sortie : étiquette(=caractère) du noeud
+Pré-condition : le noeud doit être initialisé
+*/
+char charEtiquette (noeud n) {
+    if(n != NULL) {
+        return n.etiquette;
+    } else {
+        return NULL;
+    }
+}

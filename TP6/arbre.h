@@ -21,5 +21,6 @@ bool estVide (abin a);
 noeud racine (abin a);
 int hauteur (abin a);
 abin racine (abin a);
+char charEtiquette (noeud n);
 
 #endif // ARBRE_H_INCLUDED
