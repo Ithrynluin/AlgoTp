@@ -21,7 +21,7 @@ int main(){
     arbnouv(a);
     a = enracine('r', ag, ad);
 
-    // brnche droite
+    // Branche droite
     arbnouv(ag);
     ag = enracine('q', NULL, NULL);
     arbnouv(ad);
@@ -40,6 +40,8 @@ int main(){
     a = enracine('a', ag, ad);
 
     cout << "Construction de l'arbre terminé " << endl << endl;
+
+    //Utilisation des fonctions et des procédures
 
     cout << "La taille de l'arbre créé est de : " << hauteur(a) << endl << endl;
 
