@@ -41,7 +41,7 @@ int main(){
 
     cout << "Construction de l'arbre terminé " << endl << endl;
 
-    cout << "La taille de l'arbre créé est de : " << hauteur(a) << endl << endl;
+    cout << "La hauteur de l'arbre créé est de : " << hauteur(a) << endl << endl;
 
     cout << "Utilisation de la fonction parcoursSuffixe : " << endl;
     par = parcoursSuffixe(a);
