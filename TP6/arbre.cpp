@@ -104,7 +104,7 @@ int hauteur (abin a) {
         d = 0;
         g = hauteur((*a).ag);
         d = hauteur((*a).ad);
-        return (1+(g > d) ? g : d);
+        return ((g > d) ? (g+1) : (d+1));
     } else {
         return 0;
     }
@@ -124,6 +124,12 @@ char charEtiquette (noeud * n) {
     }
 }
 
+/*
+Fonction permettant de parcourir un arbre en affichant en priorité les noeuds les plus hauts et les plus à gauche
+Paramètre d'entrée : arbre initialisé
+Paramètre de sortie : chaine de caractères affichant les étiquettes des noeuds selon l'ordre de priorisation
+Pré-condition : l'arbre doit être initialisé
+*/
 char * parcoursSuffixe(abin a){
     char * eg, *ed, *e;
     char et;
@@ -142,6 +148,12 @@ char * parcoursSuffixe(abin a){
     return e;
 }
 
+/*
+Fonction permettant de parcourir un arbre en affichant en priorité les noeuds les plus à gauche et les plus bas
+Paramètre d'entrée : arbre initialisé
+Paramètre de sortie : chaine de caractères affichant les étiquettes des noeuds selon l'ordre de priorisation
+Pré-condition : l'arbre doit être initialisé
+*/
 char * parcoursInfixe(abin a){
     char * eg, *ed, *r,*e;
     char et;
@@ -163,6 +175,12 @@ char * parcoursInfixe(abin a){
     return e;
 }
 
+/*
+Fonction permettant de parcourir un arbre en affichant en priorité les noeuds les plus bas et les plus à gauche
+Paramètre d'entrée : arbre initialisé
+Paramètre de sortie : chaine de caractères affichant les étiquettes des noeuds selon l'ordre de priorisation
+Pré-condition : l'arbre doit être initialisé
+*/
 char * parcoursPrefixe(abin a){
     char * eg, *ed, *r,*e;
     char et;

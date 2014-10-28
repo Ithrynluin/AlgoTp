@@ -41,6 +41,8 @@ int main(){
 
     cout << "Construction de l'arbre terminé " << endl << endl;
 
+    cout << "La taille de l'arbre créé est de : " << hauteur(a) << endl << endl;
+
     cout << "Utilisation de la fonction parcoursSuffixe : " << endl;
     par = parcoursSuffixe(a);
     cout << par << endl << endl;
@@ -51,7 +53,21 @@ int main(){
 
     cout << "Utilisation de la fonction parcoursPrefixe : " << endl;
     par = parcoursPrefixe(a);
-    cout << par << endl;
+    cout << par << endl << endl;
+
+    cout << "Utilisation de la fonction \'gauche(a)\' : " << endl;
+    cout << charEtiquette(gauche(a)) << endl << endl;
+
+    cout << "Utilisation de la fonction \'droite(a)\' : " << endl;
+    cout << charEtiquette(droite(a)) << endl << endl;
+
+    arbdetruit(a);
+
+    if (estVide(a) == NULL) {
+        cout << "L'arbre a été détruit." << endl;
+    } else {
+        cout << "L'arbre n'a pas été détruit." << endl;
+    }
 
     return 0;
 }
