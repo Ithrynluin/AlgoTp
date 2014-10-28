@@ -43,7 +43,7 @@ int main(){
 
     //Utilisation des fonctions et des procédures
 
-    cout << "La taille de l'arbre créé est de : " << hauteur(a) << endl << endl;
+    cout << "La hauteur de l'arbre créé est de : " << hauteur(a) << endl << endl;
 
     cout << "Utilisation de la fonction parcoursSuffixe : " << endl;
     par = parcoursSuffixe(a);
