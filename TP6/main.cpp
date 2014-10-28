@@ -39,14 +39,17 @@ int main(){
     arbnouv(a);
     a = enracine('a', ag, ad);
 
-    cout << "Construction de l'arbre terminé " << endl;
+    cout << "Construction de l'arbre terminé " << endl << endl;
 
+    cout << "Utilisation de la fonction parcoursSuffixe : " << endl;
     par = parcoursSuffixe(a);
-    cout << par << endl;
+    cout << par << endl << endl;
 
+    cout << "Utilisation de la fonction parcoursInfixe : " << endl;
     par = parcoursInfixe(a);
-    cout << par << endl;
+    cout << par << endl << endl;
 
+    cout << "Utilisation de la fonction parcoursPrefixe : " << endl;
     par = parcoursPrefixe(a);
     cout << par << endl;
 
