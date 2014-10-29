@@ -1,6 +1,5 @@
 #include <iostream>
 #include "arbre.h"
-#include "file.h"
 
 using namespace std;
 
@@ -9,8 +8,7 @@ int main(){
 
     abin a, ag, ad, ag1, ad1;
     char *par;
-    FileAttente file;
-    initFileAttente(file);
+    abin *file = new abin[200];
 
     //Branche gauche
     arbnouv(ag);
@@ -61,8 +59,9 @@ int main(){
     cout << par << endl << endl;
 
     cout << "Utilisation de la fonction parcoursLargeur : " << endl;
-    ajoutElement(file, a);
-    par = parcoursLargeur(&file);
+    file[0] = a;
+    file[1] = NULL;
+    par = parcoursLargeur(file);
     cout << par << endl << endl;
 
     cout << "Utilisation de la fonction \'gauche(a)\' : " << endl;

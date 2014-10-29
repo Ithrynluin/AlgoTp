@@ -4,6 +4,9 @@
 #include <iostream>
 #include <cstring>
 
+
+using namespace std;
+
 typedef struct n {
     char etiquette;
     struct n* ag;
@@ -25,5 +28,6 @@ char charEtiquette (noeud * n);
 char * parcoursSuffixe(abin a);
 char * parcoursInfixe(abin a);
 char * parcoursPrefixe(abin a);
+char * parcoursLargeur(abin * file);
 
 #endif // ARBRE_H_INCLUDED

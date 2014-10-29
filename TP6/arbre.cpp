@@ -137,7 +137,7 @@ char * parcoursSuffixe(abin a){
         et = charEtiquette(racine(a));
         eg = parcoursSuffixe((*a).ag);
         ed = parcoursSuffixe((*a).ad);
-        e = new char[sizeof(eg) + sizeof(ed) + 1];
+        e = new char[5];
         e[0] = et;
         strcat(e, eg);
         strcat(e, ed);
@@ -161,7 +161,7 @@ char * parcoursInfixe(abin a){
         eg = parcoursInfixe((*a).ag);
         et = charEtiquette(racine(a));
         ed = parcoursInfixe((*a).ad);
-        e = new char[sizeof(eg) + sizeof(ed) + 1];
+        e = new char[5];
         r = new char[2];
         r[0] = et;
         r[1] = '\0';
@@ -189,7 +189,7 @@ char * parcoursPrefixe(abin a){
         ed = parcoursPrefixe((*a).ad);
         et = charEtiquette(racine(a));
 
-        e = new char[sizeof(eg) + sizeof(ed) + 1];
+        e = new char[5];
         r = new char[2];
         r[0] = et;
         r[1] = '\0';
@@ -202,4 +202,52 @@ char * parcoursPrefixe(abin a){
     }
     return e;
 
+}
+
+char * parcoursLargeur(abin * file){
+    abin * fileEnfant;
+    char * listeNiveau;
+    char * listeEnfant;
+    char * listeEtiquette;
+    abin a, enfant;
+    int longueurFile = 50;
+
+    int i = 0, j = 0;
+
+    fileEnfant = new abin[(longueurFile)*2+1];
+    listeNiveau = new char[longueurFile+1];
+
+
+    if(file[0] != NULL){
+        do{
+            a = file[i];
+            listeNiveau[i] = (*a).etiquette;
+            cout << " ";
+
+            enfant = gauche(a);
+            if(enfant != NULL){
+                fileEnfant[j]=enfant;
+                j++;
+            }
+            enfant = droite(a);
+            if(enfant != NULL){
+                fileEnfant[j]=enfant;
+                j++;
+            }
+
+            i++;
+        }while(file[i] != NULL);
+        listeNiveau[i] = '\0';
+        fileEnfant[j] = NULL;
+        listeEnfant = parcoursLargeur(fileEnfant);
+        listeEtiquette = new char[100];
+        listeEtiquette[0]='\0';
+        strcat(listeEtiquette, listeNiveau);
+        strcat(listeEtiquette, listeEnfant);
+    }else{
+        listeEtiquette[0] = '\0';
+    }
+
+
+    return listeEtiquette;
 }
