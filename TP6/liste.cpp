@@ -16,7 +16,7 @@ void desinitListe(Liste * liste){
     }
 }
 
-void ajoueterElement(Liste * liste, element * e){
+void ajouterElement(Liste * liste, element * e){
     element *tmp;
 
     (*e).suivant = NULL;

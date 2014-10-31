@@ -37,7 +37,7 @@ Paramètre d'entrée :    une liste
 Paramètre de sortie : la liste avec le nouvelle élément.
 Pré-condition : la liste doit être initialisé
 */
-void ajoueterElement(Liste * liste, element * e);
+void ajouterElement(Liste * liste, element * e);
 /*
 Supprime le premier élément la liste.
 Paramètre d'entrée : une liste
