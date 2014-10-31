@@ -141,7 +141,7 @@ Liste parcoursSuffixe(abin a){
     if(a != NULL){
         et = charEtiquette(racine(a));
         (*e).caractere = et;
-        ajoueterElement(&listeEtiquette, e);
+        ajouterElement(&listeEtiquette, e);
         listeGauche = parcoursSuffixe((*a).ag);
         listeDroite = parcoursSuffixe((*a).ad);
         concatenerListe(&listeEtiquette, &listeGauche);
@@ -170,7 +170,7 @@ Liste parcoursInfixe(abin a){
         (*e).caractere = et;
 
         listeEtiquette = listeGauche;
-        ajoueterElement(&listeEtiquette, e);
+        ajouterElement(&listeEtiquette, e);
         concatenerListe(&listeEtiquette, &listeDroite);
     }else{
         initListe(&listeEtiquette); // Si aucun noeud on retourne une liste vide
@@ -199,7 +199,7 @@ Liste parcoursPrefixe(abin a){
         concatenerListe(&listeEtiquette, &listeDroite);
         e = new element;
         (*e).caractere = et;
-        ajoueterElement(&listeEtiquette, e);
+        ajouterElement(&listeEtiquette, e);
     }else{
         initListe(&listeEtiquette);
     }
@@ -207,25 +207,31 @@ Liste parcoursPrefixe(abin a){
 
 }
 
-char * parcoursLargeur(abin * file){
+/*
+Fonction qui parcours un arbre en largeur
+Paramètre d'entrée : un tableau d'arbre se terminant par NULL
+Retourne : liste de caractères affichant les étiquettes des noeuds selon l'ordre de priorisation
+Pré-condition : l'arbre doit être initialisé
+*/
+Liste parcoursLargeur(abin * file){
     abin * fileEnfant;
-    char * listeNiveau;
-    char * listeEnfant;
-    char * listeEtiquette;
+    Liste listeEnfant;
+    Liste listeEtiquette;
+    element * e;
     abin a, enfant;
     int longueurFile = 50;
 
     int i = 0, j = 0;
 
     fileEnfant = new abin[(longueurFile)*2+1];
-    listeNiveau = new char[longueurFile+1];
-
+    initListe(&listeEtiquette);
 
     if(file[0] != NULL){
         do{
             a = file[i];
-            listeNiveau[i] = (*a).etiquette;
-            cout << " ";
+            e = new element;
+            (*e).caractere = charEtiquette(a);
+            ajouterElement(&listeEtiquette, e);
 
             enfant = gauche(a);
             if(enfant != NULL){
@@ -240,17 +246,13 @@ char * parcoursLargeur(abin * file){
 
             i++;
         }while(file[i] != NULL);
-        listeNiveau[i] = '\0';
+
         fileEnfant[j] = NULL;
         listeEnfant = parcoursLargeur(fileEnfant);
-        listeEtiquette = new char[100];
-        listeEtiquette[0]='\0';
-        strcat(listeEtiquette, listeNiveau);
-        strcat(listeEtiquette, listeEnfant);
-    }else{
-        listeEtiquette[0] = '\0';
-    }
 
+        concatenerListe(&listeEtiquette, &listeEnfant);
+
+    }
 
     return listeEtiquette;
 }

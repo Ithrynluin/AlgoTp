@@ -28,6 +28,6 @@ char charEtiquette (noeud * n);
 Liste parcoursSuffixe(abin a);
 Liste parcoursInfixe(abin a);
 Liste parcoursPrefixe(abin a);
-char * parcoursLargeur(abin * file);
+Liste parcoursLargeur(abin * file);
 
 #endif // ARBRE_H_INCLUDED

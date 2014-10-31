@@ -8,9 +8,8 @@ using namespace std;
 int main(){
 
     abin a, ag, ad, ag1, ad1;
-    char *par;
     Liste listeEtiquette;
-    abin *file = new abin[200];
+    abin *file = new abin[2];
 
     //Branche gauche
     arbnouv(ag);
@@ -69,8 +68,10 @@ int main(){
     cout << "Utilisation de la fonction parcoursLargeur : " << endl;
     file[0] = a;
     file[1] = NULL;
-    par = parcoursLargeur(file);
-    cout << par << endl << endl;
+    listeEtiquette = parcoursLargeur(file);
+    afficherListe(listeEtiquette);
+    desinitListe(&listeEtiquette);
+    cout << endl;
 
     cout << "Utilisation de la fonction \'gauche(a)\' : " << endl;
     cout << charEtiquette(gauche(a)) << endl << endl;
