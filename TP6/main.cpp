@@ -1,5 +1,6 @@
 #include <iostream>
 #include "arbre.h"
+#include "liste.h"
 
 using namespace std;
 
@@ -8,6 +9,7 @@ int main(){
 
     abin a, ag, ad, ag1, ad1;
     char *par;
+    Liste listeEtiquette;
     abin *file = new abin[200];
 
     //Branche gauche
@@ -47,16 +49,22 @@ int main(){
     cout << "La hauteur de l'arbre créé est de : " << hauteur(a) << endl << endl;
 
     cout << "Utilisation de la fonction parcoursSuffixe : " << endl;
-    par = parcoursSuffixe(a);
-    cout << par << endl << endl;
+    listeEtiquette = parcoursSuffixe(a);
+    afficherListe(listeEtiquette);
+    desinitListe(&listeEtiquette);
+    cout << endl;
 
     cout << "Utilisation de la fonction parcoursInfixe : " << endl;
-    par = parcoursInfixe(a);
-    cout << par << endl << endl;
+    listeEtiquette = parcoursInfixe(a);
+    afficherListe(listeEtiquette);
+    desinitListe(&listeEtiquette);
+    cout << endl;
 
     cout << "Utilisation de la fonction parcoursPrefixe : " << endl;
-    par = parcoursPrefixe(a);
-    cout << par << endl << endl;
+    listeEtiquette = parcoursPrefixe(a);
+    afficherListe(listeEtiquette);
+    desinitListe(&listeEtiquette);
+    cout << endl;
 
     cout << "Utilisation de la fonction parcoursLargeur : " << endl;
     file[0] = a;

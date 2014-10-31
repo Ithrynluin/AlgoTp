@@ -3,7 +3,7 @@
 
 #include <iostream>
 #include <cstring>
-
+#include "liste.h"
 
 using namespace std;
 
@@ -25,9 +25,9 @@ bool estVide (abin a);
 int hauteur (abin a);
 abin racine (abin a);
 char charEtiquette (noeud * n);
-char * parcoursSuffixe(abin a);
-char * parcoursInfixe(abin a);
-char * parcoursPrefixe(abin a);
+Liste parcoursSuffixe(abin a);
+Liste parcoursInfixe(abin a);
+Liste parcoursPrefixe(abin a);
 char * parcoursLargeur(abin * file);
 
 #endif // ARBRE_H_INCLUDED

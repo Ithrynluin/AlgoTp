@@ -127,80 +127,83 @@ char charEtiquette (noeud * n) {
 /*
 Fonction permettant de parcourir un arbre en affichant en priorité les noeuds les plus hauts et les plus à gauche
 Paramètre d'entrée : arbre initialisé
-Paramètre de sortie : chaine de caractères affichant les étiquettes des noeuds selon l'ordre de priorisation
+Retourne : liste de caractères affichant les étiquettes des noeuds selon l'ordre de priorisation
 Pré-condition : l'arbre doit être initialisé
 */
-char * parcoursSuffixe(abin a){
-    char * eg, *ed, *e;
+Liste parcoursSuffixe(abin a){
+    Liste listeEtiquette, listeDroite, listeGauche;
     char et;
+    element * e;
+
+    initListe(&listeEtiquette);
+    e = new element;
+
     if(a != NULL){
         et = charEtiquette(racine(a));
-        eg = parcoursSuffixe((*a).ag);
-        ed = parcoursSuffixe((*a).ad);
-        e = new char[5];
-        e[0] = et;
-        strcat(e, eg);
-        strcat(e, ed);
-    }else{
-        e = new char;
-        e[0] = '\0';
+        (*e).caractere = et;
+        ajoueterElement(&listeEtiquette, e);
+        listeGauche = parcoursSuffixe((*a).ag);
+        listeDroite = parcoursSuffixe((*a).ad);
+        concatenerListe(&listeEtiquette, &listeGauche);
+        concatenerListe(&listeEtiquette, &listeDroite);
     }
-    return e;
+    return listeEtiquette;
 }
 
 /*
 Fonction permettant de parcourir un arbre en affichant en priorité les noeuds les plus à gauche et les plus bas
 Paramètre d'entrée : arbre initialisé
-Paramètre de sortie : chaine de caractères affichant les étiquettes des noeuds selon l'ordre de priorisation
+Retourne : liste de caractères affichant les étiquettes des noeuds selon l'ordre de priorisation
 Pré-condition : l'arbre doit être initialisé
 */
-char * parcoursInfixe(abin a){
-    char * eg, *ed, *r,*e;
+Liste parcoursInfixe(abin a){
+    Liste listeEtiquette, listeGauche, listeDroite;
     char et;
+    element *e;
+
     if(a != NULL){
-        eg = parcoursInfixe((*a).ag);
+        listeGauche = parcoursInfixe((*a).ag);
         et = charEtiquette(racine(a));
-        ed = parcoursInfixe((*a).ad);
-        e = new char[5];
-        r = new char[2];
-        r[0] = et;
-        r[1] = '\0';
-        e = eg;
-        strcat(e, r);
-        strcat(e, ed);
+        listeDroite = parcoursInfixe((*a).ad);
+
+        e = new element;
+        (*e).caractere = et;
+
+        listeEtiquette = listeGauche;
+        ajoueterElement(&listeEtiquette, e);
+        concatenerListe(&listeEtiquette, &listeDroite);
     }else{
-        e = new char;
-        e[0] = '\0';
+        initListe(&listeEtiquette); // Si aucun noeud on retourne une liste vide
     }
-    return e;
+
+    return listeEtiquette;
 }
 
 /*
 Fonction permettant de parcourir un arbre en affichant en priorité les noeuds les plus bas et les plus à gauche
 Paramètre d'entrée : arbre initialisé
-Paramètre de sortie : chaine de caractères affichant les étiquettes des noeuds selon l'ordre de priorisation
+Retourne : liste de caractères affichant les étiquettes des noeuds selon l'ordre de priorisation
 Pré-condition : l'arbre doit être initialisé
 */
-char * parcoursPrefixe(abin a){
-    char * eg, *ed, *r,*e;
+Liste parcoursPrefixe(abin a){
+    Liste listeEtiquette, listeDroite, listeGauche;
     char et;
+    element *e;
+
     if(a != NULL){
-        eg = parcoursPrefixe((*a).ag);
-        ed = parcoursPrefixe((*a).ad);
+        listeGauche = parcoursPrefixe((*a).ag);
+        listeDroite = parcoursPrefixe((*a).ad);
         et = charEtiquette(racine(a));
 
-        e = new char[5];
-        r = new char[2];
-        r[0] = et;
-        r[1] = '\0';
-        e = eg;
-        strcat(e, ed);
-        strcat(e, r);
+        listeEtiquette = listeGauche;
+        concatenerListe(&listeEtiquette, &listeDroite);
+        e = new element;
+        (*e).caractere = et;
+        ajoueterElement(&listeEtiquette, e);
     }else{
-        e = new char;
-        e[0] = '\0';
+        initListe(&listeEtiquette);
     }
-    return e;
+    return listeEtiquette;
 
 }
 
