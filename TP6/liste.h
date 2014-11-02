@@ -33,8 +33,8 @@ void desinitListe(Liste * liste);
 /*
 Ajoute un élément en fin de liste.
 Paramètre d'entrée :    une liste
-                        l'élément à ajouetr.
-Paramètre de sortie : la liste avec le nouvelle élément.
+                        l'élément à ajouter.
+Paramètre de sortie : la liste avec le nouvelle élément en fin.
 Pré-condition : la liste doit être initialisé
 */
 void ajouterElement(Liste * liste, element * e);

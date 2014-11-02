@@ -54,7 +54,7 @@ void concatenerListe(Liste * liste1, const Liste * liste2){
     if(finListe1 != NULL && debutListe2 != NULL){
         (*finListe1).suivant = debutListe2;
         (*liste1).fin = (*liste2).fin;
-    }else if(debutListe2 == NULL && debutListe2 != NULL){
+    }else if(finListe1 == NULL && debutListe2 != NULL){
         (*liste1).tete = debutListe2;
         (*liste1).fin = (*liste2).fin;
     }
