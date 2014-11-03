@@ -213,7 +213,7 @@ Paramètre d'entrée : un tableau d'arbre se terminant par NULL
 Retourne : liste de caractères affichant les étiquettes des noeuds selon l'ordre de priorisation
 Pré-condition : l'arbre doit être initialisé
 */
-Liste parcoursLargeur(abin * file){
+/*Liste parcoursLargeur(abin * file){
     abin * fileEnfant;
     Liste listeEnfant;
     Liste listeEtiquette;
@@ -255,4 +255,35 @@ Liste parcoursLargeur(abin * file){
     }
 
     return listeEtiquette;
+}*/
+
+Liste parcoursLargeur(abin a){
+    Liste listeEtiquette;
+    FileAttente file;
+    abin enfant, actuel;
+    element *e;
+
+    initFileAttente(file);
+    initListe(&listeEtiquette);
+
+    ajoutElement(file, a);
+
+    while(file.tete != NULL){
+        actuel = consulterTete(file);
+        e = new element;
+        (*e).caractere = (*actuel).etiquette;
+        ajouterElement(&listeEtiquette, e);
+        enfant = gauche(actuel);
+        if(enfant != NULL){
+            ajoutElement(file, enfant);
+        }
+        enfant = droite(actuel);
+        if(enfant != NULL){
+            ajoutElement(file, enfant);
+        }
+        retireTete(file);
+    }
+
+    return listeEtiquette;
+
 }

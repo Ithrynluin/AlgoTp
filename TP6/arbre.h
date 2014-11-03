@@ -5,6 +5,7 @@
 #include <cstring>
 #include "liste.h"
 
+
 using namespace std;
 
 typedef struct n {
@@ -14,6 +15,8 @@ typedef struct n {
 } noeud;
 
 typedef noeud * abin;
+
+#include "file.h" //parce que ca bug
 
 void arbnouv (abin a);
 void arbdetruit (abin a);
@@ -28,6 +31,7 @@ char charEtiquette (noeud * n);
 Liste parcoursSuffixe(abin a);
 Liste parcoursInfixe(abin a);
 Liste parcoursPrefixe(abin a);
-Liste parcoursLargeur(abin * file);
+//Liste parcoursLargeur(abin * file);
+Liste parcoursLargeur(abin a);
 
 #endif // ARBRE_H_INCLUDED

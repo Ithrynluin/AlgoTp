@@ -66,9 +66,9 @@ int main(){
     cout << endl;
 
     cout << "Utilisation de la fonction parcoursLargeur : " << endl;
-    file[0] = a;
-    file[1] = NULL;
-    listeEtiquette = parcoursLargeur(file);
+   /* file[0] = a;
+    file[1] = NULL;*/
+    listeEtiquette = parcoursLargeur(a);
     afficherListe(listeEtiquette);
     desinitListe(&listeEtiquette);
     cout << endl;
