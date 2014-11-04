@@ -16,9 +16,11 @@ void desinitListe(Liste * liste){
     }
 }
 
-void ajouterElement(Liste * liste, element * e){
+void ajouterElement(Liste * liste, char caractere){
     element *tmp;
+    element *e = new element;
 
+    (*e).caractere = caractere;
     (*e).suivant = NULL;
     if((*liste).tete == NULL){
         (*liste).tete = e;

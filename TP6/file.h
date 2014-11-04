@@ -33,7 +33,7 @@ Procédure qui initialise une file
 Paramètre de sortie: file d'attente initialisé
 Post-condition: la tete et la queue dont égale à NULL
 */
-void initFileAttente(FileAttente & file);
+void initFileAttente(FileAttente * file);
 
 /*
 Procédure qui supprimer tous les élèment de la file
@@ -42,7 +42,7 @@ Paramètre de sortie: File d'attente vide
 Pré-condition: La file doit être initialiser
 Post-condition: La file est vide et initialisé
 */
-void desinitFileAttente(FileAttente &file);
+void desinitFileAttente(FileAttente *file);
 
 /*
 Procédure permettant d'ajouter une personne en queue de file d'attente
@@ -53,7 +53,7 @@ Paramètres de sortie : file d'attente avec le nouveau maillon en queue
 Pré-condition : la file d'attente doit être initialisé
 Post-conditon : le nouveau maillon est en queue de file.
 */
-void ajoutElement (FileAttente &f, abin a);
+void ajoutElement (FileAttente *f, abin a);
 
 /*
 Procédure qui retire une personne en queue de file
@@ -63,7 +63,7 @@ Pré-condition: la file ne doit pas etre vide
 Post-condition: le deuxième maillon est maintenant en tete
                   Si file ne contient qu'un éléemnt, le file est initialisée
 */
-void retireTete(FileAttente &file);
+void retireTete(FileAttente *file);
 
 /*
 Procédure permettant de consulter la personne en tete de file

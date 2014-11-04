@@ -133,15 +133,13 @@ Pré-condition : l'arbre doit être initialisé
 Liste parcoursSuffixe(abin a){
     Liste listeEtiquette, listeDroite, listeGauche;
     char et;
-    element * e;
 
     initListe(&listeEtiquette);
-    e = new element;
 
     if(a != NULL){
         et = charEtiquette(racine(a));
-        (*e).caractere = et;
-        ajouterElement(&listeEtiquette, e);
+
+        ajouterElement(&listeEtiquette, et);
         listeGauche = parcoursSuffixe((*a).ag);
         listeDroite = parcoursSuffixe((*a).ad);
         concatenerListe(&listeEtiquette, &listeGauche);
@@ -159,18 +157,14 @@ Pré-condition : l'arbre doit être initialisé
 Liste parcoursInfixe(abin a){
     Liste listeEtiquette, listeGauche, listeDroite;
     char et;
-    element *e;
 
     if(a != NULL){
         listeGauche = parcoursInfixe((*a).ag);
         et = charEtiquette(racine(a));
         listeDroite = parcoursInfixe((*a).ad);
 
-        e = new element;
-        (*e).caractere = et;
-
         listeEtiquette = listeGauche;
-        ajouterElement(&listeEtiquette, e);
+        ajouterElement(&listeEtiquette, et);
         concatenerListe(&listeEtiquette, &listeDroite);
     }else{
         initListe(&listeEtiquette); // Si aucun noeud on retourne une liste vide
@@ -188,7 +182,6 @@ Pré-condition : l'arbre doit être initialisé
 Liste parcoursPrefixe(abin a){
     Liste listeEtiquette, listeDroite, listeGauche;
     char et;
-    element *e;
 
     if(a != NULL){
         listeGauche = parcoursPrefixe((*a).ag);
@@ -197,9 +190,7 @@ Liste parcoursPrefixe(abin a){
 
         listeEtiquette = listeGauche;
         concatenerListe(&listeEtiquette, &listeDroite);
-        e = new element;
-        (*e).caractere = et;
-        ajouterElement(&listeEtiquette, e);
+        ajouterElement(&listeEtiquette, et);
     }else{
         initListe(&listeEtiquette);
     }
@@ -261,27 +252,24 @@ Liste parcoursLargeur(abin a){
     Liste listeEtiquette;
     FileAttente file;
     abin enfant, actuel;
-    element *e;
 
-    initFileAttente(file);
+    initFileAttente(&file);
     initListe(&listeEtiquette);
 
-    ajoutElement(file, a);
+    ajoutElement(&file, a);
 
     while(file.tete != NULL){
         actuel = consulterTete(file);
-        e = new element;
-        (*e).caractere = (*actuel).etiquette;
-        ajouterElement(&listeEtiquette, e);
+        ajouterElement(&listeEtiquette, charEtiquette(actuel));
         enfant = gauche(actuel);
         if(enfant != NULL){
-            ajoutElement(file, enfant);
+            ajoutElement(&file, enfant);
         }
         enfant = droite(actuel);
         if(enfant != NULL){
-            ajoutElement(file, enfant);
+            ajoutElement(&file, enfant);
         }
-        retireTete(file);
+        retireTete(&file);
     }
 
     return listeEtiquette;

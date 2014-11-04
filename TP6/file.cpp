@@ -7,9 +7,9 @@ Procédure qui initialise une file
 Paramètre de sortie: file d'attente initialisé
 Post-condition: la tete et la queue dont égale à NULL
 */
-void initFileAttente(FileAttente &file){
-    file.tete = NULL;
-    file.queu = NULL;
+void initFileAttente(FileAttente *file){
+    (*file).tete = NULL;
+    (*file).queu = NULL;
 }
 
 /*
@@ -19,9 +19,9 @@ Paramètre de sortie: File d'attente vide
 Pré-condition: La file doit être initialiser
 Post-condition: La file est vide et initialisé
 */
-void desinitFileAttente(FileAttente &file){
+void desinitFileAttente(FileAttente *file){
 
-    while(file.tete != NULL){
+    while((*file).tete != NULL){
         retireTete(file);
     }
 }
@@ -35,20 +35,20 @@ Paramètres de sortie : file d'attente avec le nouveau maillon en queue
 Pré-condition : la file d'attente doit être initialisé
 Post-conditon : le nouveau maillon est en queue de file.
 */
-void ajoutElement (FileAttente &f, abin a) {
+void ajoutElement (FileAttente *f, abin a) {
     maillon * np;
     maillon *tmp;
 
     np = new maillon;
     (*np).a = a;
 
-    if(f.tete == NULL) {
-        f.tete = np;
-        f.queu = np;
+    if((*f).tete == NULL) {
+        (*f).tete = np;
+        (*f).queu = np;
     } else {
-        tmp = f.queu;
+        tmp = (*f).queu;
         (*tmp).suivant = np;
-        f.queu = np;
+        (*f).queu = np;
     }
 }
 /*
@@ -59,15 +59,15 @@ Pré-condition: la file ne doit pas etre vide
 Post-condition: le deuxième maillon est maintenant en tete
                   Si file ne contient qu'un éléemnt, le file est initialisée
 */
-void retireTete(FileAttente &file){
+void retireTete(FileAttente *file){
     maillon * tmp;
-    if(file.tete == file.queu){
-        tmp = file.tete;
+    if((*file).tete == (*file).queu){
+        tmp = (*file).tete;
         delete tmp;
         initFileAttente(file);
     }else{
-        tmp = file.tete;
-        file.tete = (*tmp).suivant;
+        tmp = (*file).tete;
+        (*file).tete = (*tmp).suivant;
         delete tmp;
     }
 }
@@ -80,7 +80,13 @@ Pré-condition : la file doit être initialisée
 Post-condition : retiurne le maillon de tete ou NULL si la file est vide
 */
 abin consulterTete (FileAttente file) {
-    return (*file.tete).a;
+    abin a;
+    if(file.tete == NULL){
+            a = NULL;
+    }else{
+        a = (*file.tete).a;
+    }
+    return a;
 }
 
 /*
